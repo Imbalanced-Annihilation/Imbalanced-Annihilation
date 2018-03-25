@@ -1,6 +1,0 @@
-Existing:
----------
-
-
-
-* Static turrets can not guard other units, althought they have canguard=1 in unitdef. Maybe redui bug, maybe engine bug, maybe feature?

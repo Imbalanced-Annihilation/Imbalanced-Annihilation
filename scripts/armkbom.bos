@@ -1,0 +1,256 @@
+piece	base ,body, rcanon, bflare, rklc, lthigh ,lfoot ,rthigh ,lfoot ,axe ,b1;
+//explosion ki marche pa...
+static-var	bMoving, bAiming, bCanAim;
+
+#define SIG_MOVEMENT	2
+#define SIG_AIM		4
+
+
+#define	ANIM_VARIABLE   bMoving
+#undef	ANIM_VARIABLE
+
+#define SMOKEPIECE1 body
+
+#include "smokeunit.h"
+#include "EXPtype.h"
+
+walklegs()
+	{
+	move lthigh to z-axis <-1,5> speed <15>;
+	move rthigh to z-axis <2> speed <15>;
+
+	turn body around x-axis <15> speed <30>;
+	move body to y-axis <-1> speed <20>;
+
+	move lthigh to y-axis <0> speed <50>;
+	move rthigh to y-axis <1> speed <50>;
+
+	wait-for-move rthigh along z-axis;
+
+	move lthigh to z-axis <2> speed <15>;
+	move rthigh to z-axis <-1,5> speed <15>;
+
+	turn body around x-axis <-15> speed <30>;
+	move body to y-axis <0> speed <20>;
+
+	move lthigh to y-axis <1> speed <50>;
+	move rthigh to y-axis <0> speed <50>;
+	
+	sleep <150>;
+	}
+
+walk()
+	{
+	move lthigh to z-axis <-1,5> speed <15>;
+	move rthigh to z-axis <2> speed <15>;
+
+	turn body around x-axis <15> speed <30>;
+	move body to y-axis <-1> speed <20>;
+
+	move lthigh to y-axis <0> speed <50>;
+	move rthigh to y-axis <1> speed <50>;
+
+	wait-for-move rthigh along z-axis;
+
+	move lthigh to z-axis <2> speed <15>;
+	move rthigh to z-axis <-1,5> speed <15>;
+
+	turn body around x-axis <-15> speed <30>;
+	move body to y-axis <0> speed <20>;
+
+	move lthigh to y-axis <1> speed <50>;
+	move rthigh to y-axis <0> speed <50>;
+	
+	sleep <150>;
+	}
+
+
+MotionControl()
+	{
+	var	moving, aiming, just_moved;
+
+	just_moved = TRUE;
+
+	while (TRUE)
+		{
+		moving = bMoving;
+		aiming = bAiming;
+
+		if (moving)
+			{
+			if (aiming)
+				{
+				bCanAim = TRUE;
+				call-script walklegs();
+				}
+
+			if (NOT aiming)
+				{
+				bCanAim = FALSE;
+				call-script walk();
+				}
+
+			just_moved = TRUE;
+			}
+
+		if (NOT moving)
+			{
+			bCanAim = TRUE;
+
+			if (just_moved)
+				{
+	move lthigh to z-axis <0> speed <10>;
+	move rthigh to z-axis <0> speed <10>;
+	move body to y-axis <0> speed <10>;
+				}
+				if (NOT aiming)
+					{
+	move lthigh to z-axis <0> speed <10>;
+	move rthigh to z-axis <0> speed <10>;
+	move body to y-axis <0> speed <10>;
+					}
+
+
+				just_moved = FALSE;
+				}
+
+				sleep 100;
+			}
+		}
+	}
+
+Create()
+	{
+	hide bflare;
+
+	bMoving = FALSE;
+	bAiming = FALSE;
+	bCanAim = TRUE;
+
+	start-script MotionControl();
+	start-script SmokeUnit();
+	}
+
+StartMoving()
+	{
+	bMoving = TRUE;
+	}
+
+StopMoving()
+	{
+	bMoving = FALSE;
+	}
+
+SweetSpot(piecenum)
+	{
+	piecenum=base;
+	}
+
+RestoreAfterDelay()
+	{
+	sleep <11000>;
+
+	turn body to y-axis 0 speed <90>;
+	turn rcanon to x-axis 0 speed <45>;
+	wait-for-turn body around y-axis;
+	wait-for-turn rcanon around x-axis;
+
+	bAiming = FALSE;
+	}
+
+AimFromPrimary(piecenum)
+	{
+	piecenum=body;
+	}
+
+QueryPrimary(piecenum)
+	{
+	piecenum=bflare;
+	}
+
+AimPrimary(heading,pitch)
+	{
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+
+	bAiming = TRUE;
+	while (NOT bCanAim)
+		{
+		sleep 100;
+		}
+
+	turn body to y-axis heading speed <200>;
+	turn rcanon to x-axis (0 - pitch) speed <100>;
+
+	wait-for-turn body around y-axis;
+	wait-for-turn rcanon around x-axis;
+
+	start-script RestoreAfterDelay();
+
+	return( TRUE );
+	}
+
+FirePrimary()
+	{
+	show bflare;
+	sleep 150;
+	hide bflare;
+	}
+
+#include "EXPtype.h"
+Killed( severity, corpsetype )
+	{
+	hide bfire;
+	hide base;
+	hide axe;
+	hide b1;
+	if (severity <= 25)
+		{
+		corpsetype = 1;
+		explode rfoot type	BITMAPONLY | BITMAP4;
+		explode rthigh type	BITMAPONLY | BITMAP5;
+		explode lfoot type	BITMAPONLY | BITMAP1;
+		explode lthigh type	BITMAPONLY | BITMAP2;
+		explode rcanon type	BITMAPONLY | BITMAP3;
+		explode rklc type	BITMAPONLY | BITMAP4;
+		explode body type	BITMAPONLY | BITMAP5;
+		return( 0 );
+		}
+
+	if (severity <= 50)
+		{
+		corpsetype = 2;
+		explode rfoot type	FALL | BITMAP1;
+		explode rthigh type	FALL | BITMAP2;
+		explode lfoot type	FALL | BITMAP3;
+		explode lthigh type	FALL | BITMAP4;
+		explode rcanon type	FALL | BITMAP5;
+		explode rklc type	FALL | BITMAP1;
+		explode body type	SHATTER | BITMAP2;
+		return( 0 );
+		}
+
+	if (severity <= 99)
+		{
+		corpsetype = 3;
+		explode rfoot type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode rthigh type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode lfoot type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+		explode lthigh type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+		explode rloarm type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+		explode rcanon type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+		explode rklc type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode body type	SHATTER | BITMAP5;
+		return( 0 );
+		}
+
+	corpsetype = 3;
+	explode rfoot type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode rthigh type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode lfoot type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3;
+	explode lthigh type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4;
+	explode rcanon type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP5;
+	explode rklc type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP1;
+	explode body type	SHATTER | EXPLODE_ON_HIT | BITMAP2;
+	return( 0 );
+	}

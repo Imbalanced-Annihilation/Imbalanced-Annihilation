@@ -1,0 +1,112 @@
+#define TA			// This is a TA script
+
+#include "sfxtype.h"
+#include "exptype.h"
+
+#define	SIG_AIM1	2
+#define SMOKEPIECE1 base
+
+piece Base, Body, Turret, Canon, Flare;
+
+static-var restore_delay, unitview;
+
+Create()
+	{
+	unitview = FALSE;
+	restore_delay = 2000;
+	hide Flare;
+	start-script SmokeUnit();
+	}
+
+SetMaxReloadTime(time)
+	{
+	restore_delay = time * 2;
+	}
+
+RestoreAfterDelay()
+	{
+	sleep restore_delay;
+	turn Turret to y-axis <0> speed <85.00>;
+	return 0;
+	}
+
+Demo()
+	{
+	unitview = TRUE;
+	}
+
+SweetSpot (piecenum)
+	{
+	piecenum = base;
+	}
+
+QueryPrimary (piecenum)
+	{
+	piecenum = Flare;
+	}
+
+AimFromPrimary (piecenum)
+	{
+	piecenum = Turret;
+	}
+
+AimPrimary(heading, pitch)
+	{
+	signal SIG_AIM1;
+	set-signal-mask SIG_AIM1;
+	turn Turret to y-axis heading speed <60.00>;
+	wait-for-turn Turret around y-axis;
+        start-script RestoreAfterDelay();
+	return(TRUE);
+	}
+
+FirePrimary()
+	{
+	move Canon to z-axis <-2.00> now;
+        show Flare;
+	sleep 150;
+	hide Flare;
+	move Canon to z-axis <0> SPEED <4.00>;
+        return(0);
+	}
+
+Killed(severity, corpsetype)
+	{
+	if (severity <= 25)
+		{
+		corpsetype = 1;
+		explode Base type	BITMAPONLY | BITMAP1;
+		explode Body type	BITMAPONLY | BITMAP1;
+		explode Turret type	BITMAPONLY | BITMAP1;
+		explode Canon type	BITMAPONLY | BITMAP1;
+		explode Flare type	BITMAPONLY | BITMAP1;
+		return(0);
+		}
+	if (severity <= 50)
+		{
+		corpsetype = 2;
+		explode Base type	SHATTER | BITMAP4;
+		explode Body type	SHATTER | BITMAP4;
+		explode Turret type	SHATTER | BITMAP4;
+		explode Canon type	SHATTER | BITMAP4;
+		explode Flare type	SHATTER | BITMAP4;
+		return(0);
+		}
+	if (severity <= 99)
+		{
+		corpsetype = 3;
+		explode Base type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Body type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Turret type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Canon type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Flare type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return(0);
+		}
+	corpsetype = 3;
+	explode Base type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Body type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Turret type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Canon type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Flare type	FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	return(0);
+	}
