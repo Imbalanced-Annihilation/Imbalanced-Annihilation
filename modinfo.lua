@@ -4,7 +4,7 @@ return {
   shortname='IMBA',
   version='v1.0',
   mutator='',
-  game='Balanced Annihilation',
+  game='Imbalanced Annihilation',
   shortGame='IMBA',
   modtype=1,
   engine = "103.0.1-1222-g37dc534 develop",

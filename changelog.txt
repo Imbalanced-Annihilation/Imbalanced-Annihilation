@@ -1,79 +1,80 @@
 Imbalanced Annihilation v1.0.0
-(Balanced Annihilation Mod by Krogoth)
+Balanced Annihilation mod by Krogoth
+
+My e-mail: imbalancedannihilation@gmail.com
 
 *** WIP ***
 
-New units:
+First to say, I've imported some icons from OTA. Tell me if you like it.
+I've made it (and some other choices) because I personally think they are preferable (no retro feelings here).
 
+NEW UNITS:
+----------
 ARM Meerkat - Stealthy Bomber Kbot (Tier 1)
-Cheap, can take advantage of radar-invisibility and short but unobstructed vision.
+Cheap kbot that can take advantage of radar-invisibility and short but unobstructed vision.
+Has weak armor and is generally (very) bad at hitting maneuverable targets.
 Gains damage when levels up.
-// it has mediocre velocity, weak armor and generally (very) bad at hitting maneuverable targets
-// would be interesting to see how this unit might turn useful
-// note that if group of such units raids successfully, they can level up fast and sustain about the same DPS despite casualties
+// Would be interesting to see how this unit might turn useful.
 
 ARM Wasp - Resurrection/Reclaim/Repair Plane (Tier 1 Aircraft)
 Repairs twice as fast as construction aircraft and is more durable.
-// gives another way to support your team when going air
+// Gives another way to support the team if going air.
 
 Replaced HLLT with CORE Immolator - Fire Barrier Cannon
 Rapidly fires in line, repelling hit enemies.
 Takes 120 energy to sustain.
-// want to see more pushing mechanics, as a notable property of weapon
+// Would like to see more pushing mechanics as a notable thing.
 
 CORE Scarfing - Salvo Rocket Launcher (Tier 1 Vehicle)
 Large but highly mobile vehicle that can bombard area with 18 missiles in a row.
-Requires manual command and cannot move (nor stop) while fires.
+Requires manual command and cannot move (nor stop) while it fires.
 Deals most damage to tanks and least to structures.
-// this is something that is highly dependent on control
-// one scarfing is easy to avoid but a few can make a wall of fire or take a bunch of tanks clumped onto each other
-// since it is fast, probably the best way to kill it is while it fires
+// This is something highly dependent on control.
+// 1 Scarfing is generally easy to avoid but a few can make a wall of fire or take a bunch of tanks clumped onto each other.
+// Because it is fast, probably the best way to kill it is while it fires.
 
 Reworked CORE Intruder. It is now a Tier 1 Amphibious Transport Truck.
 Can load up to 7 units 2x2 with total mass of 1100 or 1 Commander.
 Has 1100 radar range, costs 450 metal.
 Automatically unloads 1 unit before it is killed. (Commander is always unloaded)
 Adjusted mass of Commanders and Decoy Commanders: 5000->1100 (crushResistance->5000).
-// load/unload mechanics is far from great though :S
-// for now it cannot transport nano towers
+// Load/unload mechanics is far from great though. :S
+// For now it cannot transport Nano Towers.
 
 CORE Proteus - Support Assault Tank (Tier 2)
 Armed with laser that out-ranges most mobile units but has little DPS.
 However, it pierces through units, that can multiply its effectiveness against group of units or large sized units.
 Has 700 sight range.
-// against small units it is about the same DPS as Instigator
-// against big Tier 2 units the damage can be multiplied up to a point you might call decent
-// combat usage of such tanks is justified if they can sit behind and provide DPS, since they do not cost much
 
 ARM Ragnarok - Very Heavy Gauss Tank (Tier 2)
 Expensive and vulnerable tank with decent velocity and very high DPS short range cannon.
 Pierces and damages all objects in line similar to D-Gun.
 Has big death explosion.
 Cannot be transported.
-// would be interesting to see if this DPS can be delivered on practice :S
+// Would be interesting to see if this DPS can be delivered on practice. :S
 
-
+CHANGES:
+--------
 Replaced Floating Radars with Sonars
-// to buff amphibious attacks
+// (to buff amphibious attacks)
 
 Removed Hardened Metal and Energy Storages
-// to make such type of buildings vulnerable at all stages
+// (to make such type of buildings vulnerable at all stages)
 
 For this version (might be temporarily), removed Garpike, Parrow and Gun Platforms
-
 
 ARM Commander:
 Velocity increased from 1.2 to 1.35
 Laser reload time increased from 0.4 to 0.5
-Laser range reduced from 300 to 280
+Laser range reduced from 300 to 280 
 Levels 1-5 got laser damage upgraded by 10/20/30/40/50% (no further)
-// will be interesting to balance arm/core with movespeed difference
+// Will be interesting to balance Arm/Core with move speed difference.
 
 CORE Commander:
 Increased capture speed from 1800 to 2200
 Radar radius increased from 700 to 900
 Laser reload time increased from 0.4 to 0.9
-Laser range increased from 300 to 320
+Laser range increased from 300 to 320 and sea laser from 260 to 280
 Laser damage increased from 75 to 125 (75 against light scout vehicles)
 Levels 1-5 got laser damage upgraded by 15/30/40/50/60% (no further)
 
@@ -105,7 +106,7 @@ Can repair each other with 70 speed and other units with 50
 Increased turn rate from 770 to 1070
 Reduced velocity from 1.5 to 1.43
 Replaced laser with EMG about the same DPS
-// i would not change weapon if a single laser cannon looked more convincing (the other gun is nano)
+// I would probably not change weapon if a single laser gun looked more convincing (the other gun is nano).
 
 Arm Peewee:
 Gains Zipper EMG at level 4 (no spray angle, +40 range)
@@ -155,14 +156,14 @@ Reduced jam range from 450 to 360
 Reduced health from 520 to 320
 Reduced turn rate from 619 to 250
 Build time from 6404 to 5973 and energy cost from 1900 to 3100
-// much more effective in conjunction with fast units when raid enemy
+// Much more effective in conjunction with fast units.
 
 ARM Seer (Radar Vehicle):
 Reduced radar range from 2300 to 1400
 Increased sight range from 900 to 1400 (9999 losEmitHeight)
 Reduced velocity from 2 to 1.5
 Reduced health from 880 to 500
-// counters stealth/jamming with direct vision
+// Counters stealth/jamming with direct vision.
 
 CORE Informer (Radar Vehicle):
 Reduced sight range from 900 to 300
@@ -187,7 +188,8 @@ Build options are the same as of Commander
 CORE Decoy Commander:
 Increased capture speed from 900 to 1100
 
-
+VISUALS:
+--------
 New models: Core Commander, Arm Metal Extractor, Immolator, Core Nano Tower (Inebriator),
 Jeffy, Peewee, Warrior, Freaker, Guardian, Punisher
 
@@ -196,7 +198,8 @@ with OTA models (for scale)
 Scaled model of Anaconda by 1.25
 (Adjusted collision volumes)
 
-Texture changes / minor changes (visual): Arm Gantry, Bantha, Jethro(+script), Hammer, Thud, Stumpy,
+Texture changes / minor changes (visual): Arm Gantry, Consul(+script), Jethro(+script),
+Fark, Hammer, Thud, Stumpy
 
 Changed some beam lasers to laser cannons
 
