@@ -184,7 +184,7 @@ Increased capture speed from 900 to 1100
 
 AIR:
 ----
-Added ARM Wasp - Resurrection/Reclaim/Repair Plane (Tier 1 Aircraft)
+*NEW* ARM Wasp - Resurrection/Reclaim/Repair Plane (Tier 1 Aircraft)
 Repairs twice as fast as construction aircraft and is more durable.
 // Gives another way to support the team if going air.
 
