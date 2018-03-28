@@ -251,7 +251,7 @@ Can capture with 1000 speed
 VISUALS:
 --------
 New models: Core Commander, Arm Metal Extractor, Immolator, Core Nano Tower (Inebriator),
-Jeffy, Peewee, Warrior, Freaker, Guardian, Punisher, Thunderbolt
+Jeffy, Peewee, Warrior, Freaker, Guardian, Punisher
 
 Replaced models of Construction Hovercrafts, Skimmer, Scrubber, Snapper, Swatter, Slinger, Wombat, Nixer
 with OTA models (for scale)
