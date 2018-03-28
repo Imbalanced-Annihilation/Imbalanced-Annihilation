@@ -8,24 +8,20 @@ My e-mail: imbalancedannihilation@gmail.com
 First to say, I've imported some icons from OTA. Tell me if you like it.
 I've made it (and some other choices) because I personally think they are preferable (no retro feelings here).
 
-NEW UNITS:
-----------
-ARM Meerkat - Stealthy Bomber Kbot (Tier 1)
+GROUND / HOVER:
+---------------
+*NEW* ARM Meerkat - Stealthy Bomber Kbot (Tier 1)
 Cheap kbot that can take advantage of radar-invisibility and short but unobstructed vision.
 Has weak armor and is generally (very) bad at hitting maneuverable targets.
 Gains damage when levels up.
 // Would be interesting to see how this unit might turn useful.
-
-ARM Wasp - Resurrection/Reclaim/Repair Plane (Tier 1 Aircraft)
-Repairs twice as fast as construction aircraft and is more durable.
-// Gives another way to support the team if going air.
 
 Replaced HLLT with CORE Immolator - Fire Barrier Cannon
 Rapidly fires in line, repelling hit enemies.
 Takes 120 energy to sustain.
 // Would like to see more pushing mechanics as a notable thing.
 
-CORE Scarfing - Salvo Rocket Launcher (Tier 1 Vehicle)
+*NEW* CORE Scarfing - Salvo Rocket Launcher (Tier 1 Vehicle)
 Large but highly mobile vehicle that can bombard area with 18 missiles in a row.
 Requires manual command and cannot move (nor stop) while it fires.
 Deals most damage to tanks and least to structures.
@@ -41,27 +37,22 @@ Adjusted mass of Commanders and Decoy Commanders: 5000->1100 (crushResistance->5
 // Load/unload mechanics is far from great though. :S
 // For now it cannot transport Nano Towers.
 
-CORE Proteus - Support Assault Tank (Tier 2)
+*NEW* CORE Proteus - Support Assault Tank (Tier 2)
 Armed with laser that out-ranges most mobile units but has little DPS.
 However, it pierces through units, that can multiply its effectiveness against group of units or large sized units.
 Has 700 sight range.
 
-ARM Ragnarok - Very Heavy Gauss Tank (Tier 2)
+*NEW* ARM Ragnarok - Very Heavy Gauss Tank (Tier 2)
 Expensive and vulnerable tank with decent velocity and very high DPS short range cannon.
 Pierces and damages all objects in line similar to D-Gun.
 Has big death explosion.
 Cannot be transported.
 // Would be interesting to see if this DPS can be delivered on practice. :S
 
-CHANGES:
---------
-Replaced Floating Radars with Sonars
-// (to buff amphibious attacks)
-
 Removed Hardened Metal and Energy Storages
 // (to make such type of buildings vulnerable at all stages)
 
-For this version (might be temporarily), removed Garpike, Parrow and Gun Platforms
+For this version (might be temporarily), removed Garpike and Parrow
 
 ARM Commander:
 Velocity increased from 1.2 to 1.35
@@ -88,7 +79,7 @@ ARM Beamer:
 Weapon slowly attracts hit enemy towards Beamer
 
 ARM Jeffy:
-Reduced attack rate from 0.95 to 0.7
+Reduced reload time from 0.95 to 0.7
 Reduced damage from 35 to 30
 
 CORE Weasel:
@@ -115,15 +106,15 @@ ARM Anaconda:
 Increased weapon velocity from 260 to 450
 Increased build time from 3194 to 3494
 
+Swatter/Slinger:
+Reduced health by 200
+
 CORE Vehicle Plant:
 Increased model by 15% and footprints from 7x6 to 7x7
 
 Guardian/Punisher:
 Changed model and increased footprints by 1x1
 Increased attack range by 100
-
-Adv. Construction Subs:
-Can capture with 1000 speed
 
 ARM Consul:
 Changed build options:
@@ -142,6 +133,9 @@ Can build Decoy Commander
 ARM Zipper:
 Changed model and reduced collision volume scales from "25 31 11" to "17 31 11"
 Replaced EMG with fancy red/blue laser (about the same DPS)
+
+CORE Gimp:
+Replaced torpedoes with sea laser (stats are same as ground laser)
 
 CORE Commando:
 Can build Roach
@@ -188,17 +182,85 @@ Build options are the same as of Commander
 CORE Decoy Commander:
 Increased capture speed from 900 to 1100
 
+AIR:
+----
+Added ARM Wasp - Resurrection/Reclaim/Repair Plane (Tier 1 Aircraft)
+Repairs twice as fast as construction aircraft and is more durable.
+// Gives another way to support the team if going air.
+
+CORE Krow (Flying Fortress):
+Can cloak (300/1000 cost, 340 reveal range)
+
+SEA:
+----
+Replaced Floating Radars with Sonars
+// (to buff amphibious attacks)
+
+For this version (might be temporarily), removed Assault Frigates, Light Torpedo Boats and Gun Platforms
+
+Skeeter/Searcher:
+Increased health from 120 to 345 (pre-10.00 stats)
+Reduced AA range from 700 to 630
+
+ARM Skeeter:
+Increased cost (e: 700->1051, m: 65->107, bt: 1460->2062, pre-10.00 stats)
+Increased laser damage from 24 to 47
+Increased AA damage from 60 to 90
+
+CORE Searcher:
+Increased cost (e: 650->978, m: 65->101, bt: 1350->1877, pre-10.00 stats)
+Increased laser damage from 32 to 57
+Increased AA damage from 45 to 90
+
+CORE Supporter:
+Reduced max velocity from 3.3 to 2.5
+Replaced laser with piercing laser (similar to Proteus)
+Deals most damage to large ships along their length
+
+ARM Decade:
+Reduced max velocity from 3.15 to 2.35
+Increased EMG range from 280 to 330, damage from 9 to 14 and burst count from 3 to 4
+Increased cost (e: 1400->2000, m: 195->235, bt: 2590->4190)
+// Same as Supporter, it is more effective against large ships, because the accuracy is low at small ships.
+
+ARM Crusader:
+Reduced health from from 3720 to 3090
+Removed bonus damage to submarines (270->187)
+(pre-10.00 stats)
+
+CORE Enforcer:
+Reduced health from 4050 to 3360
+Removed bonus damage to submarines (283->212)
+(pre-10.00 stats)
+
+Torpedo Launchers:
+Increased range from 500 to 700
+Increased cost (CORE: e: 2025->2700, bt: 4700->5700, ARM: e: 1701->2401, bt: 4680->5680)
+
+ARM Stingray (Floating HLT):
+Reduced cost (e: 6200->5400, m: 470->380, bt: 9670->8670)
+Reduced health from 3837 to 2437
+
+CORE Thunderbolt (Floating HLT):
+Reduced cost (e: 6200->5400, m: 480->430, bt: 11386->10386)
+Reduced health from 3927 to 2936
+
+Adv. Construction Subs:
+Can capture with 1000 speed
+
 VISUALS:
 --------
 New models: Core Commander, Arm Metal Extractor, Immolator, Core Nano Tower (Inebriator),
-Jeffy, Peewee, Warrior, Freaker, Guardian, Punisher
+Jeffy, Peewee, Warrior, Freaker, Guardian, Punisher, Thunderbolt
 
 Replaced models of Construction Hovercrafts, Skimmer, Scrubber, Snapper, Swatter, Slinger, Wombat, Nixer
 with OTA models (for scale)
 Scaled model of Anaconda by 1.25
 (Adjusted collision volumes)
 
-Texture changes / minor changes (visual): Arm Gantry, Consul(+script), Jethro(+script),
+Reduced Thunderbolt model by 25% (wreck model +25%)
+
+Texture changes / minor changes (visual): Consul(+script), Jethro(+script), Arm Gantry (not finished though),
 Fark, Hammer, Thud, Stumpy
 
 Changed some beam lasers to laser cannons
