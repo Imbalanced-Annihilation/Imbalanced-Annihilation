@@ -2,7 +2,7 @@ return {
   name='Imbalanced Annihilation',
   description='Imbalanced Annihilation',
   shortname='IMBA',
-  version='v1.0',
+  version='v1.01',
   mutator='',
   game='Imbalanced Annihilation',
   shortGame='IMBA',
