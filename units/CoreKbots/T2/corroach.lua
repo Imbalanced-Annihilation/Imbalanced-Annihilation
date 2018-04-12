@@ -39,6 +39,7 @@ return {
 		turninplacespeedlimit = 1.782,
 		turnrate = 1507,
 		customparams = {
+			specialTooltip = "3000 Self-Destruct, 1800 Killed Explosion",
 			techlevel = 2,
 		},
 		sfxtypes = { 

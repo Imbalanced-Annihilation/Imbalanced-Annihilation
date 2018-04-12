@@ -11,7 +11,7 @@ return {
 		buildingGroundDecalSizeX=5,
 		buildingGroundDecalSizeY=5,
 		buildingGroundDecalType="cornanotc_aoplane.dds",
-		buildpic = "CORNANOTC.PNG",
+		buildpic = "CORNANOTC.DDS",
 		buildtime = 5312,
 		cantbetransported = false,
 		canrepeat = false,
@@ -43,7 +43,8 @@ return {
 		useBuildingGroundDecal = true,
 		workertime = 200,
 		customparams = {
-
+			notTransportedByOthers = true,
+			unloadedFlatGround = true,
 		},
 		sfxtypes = { 
  			pieceExplosionGenerators = { 

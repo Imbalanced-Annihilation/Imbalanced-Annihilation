@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armuwfus_aoplane.dds",
-		buildpic = "ARMUWFUS.DDS",
+		buildpic = "ARMUWFUS.PNG",
 		buildtime = 99870,
 		canrepeat = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR NOTHOVER SURFACE UNDERWATER",
@@ -35,6 +35,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooooooo",
 		customparams = {
+			tooltipEnergy = true,
 			bar_footprintx = 6,
 			bar_footprintz = 4,
 			techlevel = 2,

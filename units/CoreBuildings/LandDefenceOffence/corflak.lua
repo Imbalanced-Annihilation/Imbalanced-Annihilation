@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corflak_aoplane.dds",
-		buildpic = "CORFLAK.DDS",
+		buildpic = "CORFLAK.PNG",
 		buildtime = 20112,
 		canrepeat = false,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -37,6 +37,8 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
+			tooltipWeapon = "Flak",
+			weaponMainCategory = "vtol",
 			removewait = true,
 		},
 		featuredefs = {

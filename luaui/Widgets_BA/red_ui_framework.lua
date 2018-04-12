@@ -102,6 +102,7 @@ local F = {
 		end
 		
 		local texture = o.texture
+		local texture2 = o.texture2
 		local px,py,sx,sy = o.px,o.py,o.sx,o.sy	
 		
 		local alphamult = o.alphamult
@@ -131,7 +132,10 @@ local F = {
 		end
 		
 		if (texture) then
-			TexRect(px,py,sx,sy,texture,texturecolor,iconscale)
+			TexRect(px,py,math.floor(sx),math.floor(sy),texture,texturecolor,iconscale)
+		end
+		if (texture2) then
+			TexRect(px,py,math.floor(sx),math.floor(sy),texture2,texturecolor,iconscale)
 		end
 		
 		if (o.caption) then
@@ -200,6 +204,7 @@ local F = {
 		end
 		
 		local texture = o.texture
+		local texture2 = o.texture2
 		local px,py,sx,sy = o.px,o.py,o.sx,o.sy	
 		
 		local alphamult = o.alphamult
@@ -235,7 +240,10 @@ local F = {
 		end
 		
 		if (texture) then
-			TexRect(px,py,sx,sy,texture,texturecolor,iconscale)
+			TexRect(px,py,math.floor(sx),math.floor(sy),texture,texturecolor,iconscale)
+		end
+		if (texture2) then
+			TexRect(px,py,math.floor(sx),math.floor(sy),texture2,texturecolor,iconscale)
 		end
 		
 		if (o.caption) then

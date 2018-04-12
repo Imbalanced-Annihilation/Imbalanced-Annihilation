@@ -35,6 +35,7 @@ return {
 		turnrate = 979,
 		upright = true,
 		customparams = {
+			tooltipWeapon = "Heavy Salvo Rockets",
 			techlevel = 3,
 		},
 		featuredefs = {

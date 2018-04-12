@@ -3,7 +3,7 @@ return {
 		activatewhenbuilt = true,
 		buildcostenergy = 1800,
 		buildcostmetal = 0.8*150,
-		buildpic = "CORSJAM.DDS",
+		buildpic = "CORSJAM.PNG",
 		buildtime = 0.75 * 1.5 * 0.8*7025,
 		canmove = true,
 		category = "ALL NOTLAND MOBILE NOTSUB SHIP NOWEAPON NOTAIR NOTHOVER SURFACE",

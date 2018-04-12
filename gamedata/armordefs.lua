@@ -372,7 +372,7 @@ local armorDefs = {
 		--"armfgate", Not currently used by BA
 		--"corfgate", Not currently used by BA
 	},
-	lboats = {
+	ships = {
 		"corpt",
 		"armpt",
 		"armpship",
@@ -387,9 +387,6 @@ local armorDefs = {
 		"corsjam",
 		"armrship",
 		"corrship",
-		},
-
-	hvyboats = {
 		"armroy",
 		"corroy",
 		"corarch",
@@ -406,20 +403,45 @@ local armorDefs = {
 		"corbats",
 		"armepoch",
 		"corblackhy",
-		},
-		
+		},		
 	subs = {
 		"armsub",
 		"corsub",
-        "armsubk",
+		"armsubk",
 		"corshark",
-        "corssub",
+		"corssub",
 		"armserp",
 		"armacsub",
-        "coracsub",
+		"coracsub",
 		"armrecl",
 		"correcl",
 		},
+	plants = {
+		"armlab",
+		"armvp",
+		"armap",
+		"armsy",
+		"armhp",
+		"armamsub",
+		"armplat",
+		"armalab",
+		"armavp",
+		"armaap",
+		"armasy",
+		"armshltx",
+		"corlab",
+		"corvp",
+		"corap",
+		"corsy",
+		"corhp",
+		"coramsub",
+		"corplat",
+		"coralab",
+		"coravp",
+		"coraap",
+		"corasy",
+		"corgant",
+	},
 
  tinychicken =
   {

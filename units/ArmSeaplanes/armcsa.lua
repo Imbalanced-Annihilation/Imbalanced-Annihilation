@@ -44,60 +44,58 @@ return {
 		blocking = false,
 		buildoptions = {
 			"armsolar",
-			"armadvsol",
 			"armwin",
-			"armgeo",
+			"armmex",
+			"armestor",
 			"armmstor",
 
-			"armestor",
-			"armmex",
-			"armamex",
+			"armrad",
 			"armmakr",
 			"armlab",
-
 			"armvp",
 			"armap",
+
+			"armadvsol",
+			"armgeo",
+			"armamsub",
+			"armsy",
 			"armhp",
-			"armnanotc",
-			"armnanotcplat",
 
 			"armeyes",
-			"armrad",
-			"armjamt",
-			"armdrag",
-			"armclaw",
-
 			"armllt",
+			"armdrag",
+			"armrl",
+			"armdl",
+
+			"armjamt",
+			"armamex",
+			"armclaw",
 			"armbeamer",
+			"armpacko",
+
+			"armnanotc",
 			"armhlt",
 			"armguard",
-			"armrl",
-
-			"armpacko",
 			"armcir",
-			"armdl",
 			"armjuno",
-			"armfhp",
-
-			"armsy",
-			"armamsub",
-			"armplat",
+			
 			"armtide",
-			"armuwmex",
-
 			"armfmkr",
-			"armuwms",
+			"armuwmex",
 			"armuwes",
+			"armuwms",
+			
 			"armsonar",
 			"armfdrag",
+			"armsy",
+			"armplat",
+			"armfhp",
 
-			"armgplat",
+			"armtl",
 			"armfhlt",
 			"armfrt",
-			"armtl",
 		},
 		customparams = {
-			
 			area_mex_def = "armuwmex",
 		},
 		sfxtypes = { 

@@ -266,7 +266,7 @@ return {
 				rgbcolor = "0 0 0",
 				soundhitwet = "splssml",
 				soundhitwetvolume = 0.5,
-				soundstart = "xplosml2",
+				--soundstart = "xplosml2",
 				thickness = 0,
 				tolerance = 9000,
 				turnrate = 50000,

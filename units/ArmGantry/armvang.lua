@@ -35,6 +35,7 @@ return {
 		turninplacespeedlimit = 0.726,
 		turnrate = 231,
 		customparams = {
+			tooltipWeapon = "Plasma",
 			techlevel = 3,
 		},
 		featuredefs = {

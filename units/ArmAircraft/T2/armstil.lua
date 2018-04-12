@@ -37,6 +37,7 @@ return {
 		turnrate = 600,
 		blocking = false,
 		customparams = {
+			tooltipWeapon = "EMP Bombs",
 			wingsurface = 0.25,
 			techlevel = 2,
 		},

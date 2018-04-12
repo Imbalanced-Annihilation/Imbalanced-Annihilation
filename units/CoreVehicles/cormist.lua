@@ -41,7 +41,8 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 370,
 		customparams = {
-			description_long = "Slashers are long range light missile trucks. They can outrange most T1 defensive units and deal constant damage to it. They can also serve as basic anti-air defense. Very ineffective in close combat, so always try to keep them at full distance by using FIGHT command, avoid flashes and other fast infantry. In larger packs Slashers can even take down Heavy Laser Turrets. Combine with Levelers/Raiders and repairing units for a devastating frontline push! Move them in line, because they can't shoot over each other.",
+			tooltipWeapon = "Missiles",
+			specialTooltip = "48 DPS against Air",
 		},
 		featuredefs = {
 			dead = {
@@ -142,7 +143,7 @@ return {
 				soundhitwetvolume = 0.5,
 				soundstart = "rockhvy2",
 				startvelocity = 420,
-                texture1 = "trans",
+				texture1 = "trans",
 				texture2 = "coresmoketrail",
 				tolerance = 8000,
 				tracks = true,

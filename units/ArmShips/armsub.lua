@@ -2,10 +2,10 @@ return {
 	armsub = {
 		activatewhenbuilt = true,
 		autoheal = 2,
-		buildcostenergy = 3200,
-		buildcostmetal = 550,
-		buildpic = "ARMSUB.DDS",
-		buildtime = 6600,
+		buildcostenergy = 3400,
+		buildcostmetal = 750,
+		buildpic = "ARMSUB.PNG",
+		buildtime = 8400,
 		canmove = true,
 		category = "UNDERWATER ALL MOBILE WEAPON NOTLAND NOTAIR NOTHOVER",
 		collisionvolumeoffsets = "0 -4 0",
@@ -19,7 +19,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 8,
 		idletime = 900,
-		maxdamage = 635,
+		maxdamage = 835,
 		minwaterdepth = 15,
 		movementclass = "UBOAT33X3",
 		name = "Lurker",
@@ -42,7 +42,9 @@ return {
 		maxreversevelocity = 2.10*0.40,
 		--end move
 		customparams = {
-			
+			tooltipWeapon = "Torpedo",
+			tooltipSonar = true,
+			specialTooltip = "60 DPS against Submarines",
 		},
 		featuredefs = {
 			dead = {

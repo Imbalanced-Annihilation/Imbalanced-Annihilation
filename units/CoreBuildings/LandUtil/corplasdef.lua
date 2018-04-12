@@ -10,8 +10,8 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corgate_aoplane.dds",
-		--buildpic = "CORPLASDEF.PNG",
-		buildpic = "CORGATE.DDS",
+		buildpic = "CORPLASDEF.PNG",
+		--buildpic = "CORGATE.DDS",
 		buildtime = 55000,
 		canattack = false,
 		canrepeat = false,
@@ -37,12 +37,12 @@ return {
 		name = "Overseer",
 		noautofire = true,
 		--objectname = "CORBUILD",
-		objectname = "CORGATE",
+		objectname = "CORPLASDEF",
 		onoffable = false,
 		seismicsignature = 0,
 		selfdestructas = "hugeBuildingExplosionGenericSelfd",
 		sightdistance = 273,
-		usebuildinggrounddecal = true,
+		--usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
 			techlevel = 2,
@@ -118,10 +118,10 @@ return {
 				[6] = "count1",
 			},
 			ok = {
-				[1] = "drone1",
+				[1] = "storngy2",
 			},
 			select = {
-				[1] = "drone1",
+				[1] = "storngy2",
 			},
 		},
 		weapondefs = {

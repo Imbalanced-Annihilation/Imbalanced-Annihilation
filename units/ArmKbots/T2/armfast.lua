@@ -35,6 +35,8 @@ return {
 		turnrate = 1430,
 		upright = true,
 		customparams = {
+			tooltipWeapon = "Rapid Laser",
+			weaponDamageRate = "2",
 			techlevel = 2,
 		},
 		featuredefs = {

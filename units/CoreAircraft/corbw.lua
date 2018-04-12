@@ -11,7 +11,7 @@ return {
 		category = "ALL WEAPON VTOL NOTSUB NOTHOVER",
 		collide = true,
 		cruisealt = 78,
-		description = "Light Paralyzer Drone",
+		description = "Paralyzer Drone",
 		energymake = 2,
 		explodeas = "tinyExplosionGeneric",
 		footprintx = 2,
@@ -36,7 +36,7 @@ return {
 		usesmoothmesh = 0,
 		blocking = false,
 		customparams = {
-			description_long = "Bladewings are little drones armed with EMP lasers. They can paralyze opponents units, but they can't deal any damage. They serve as a great support for your attacks and can turn the tide of war easily. However, they have very little armor and quickly vanish if faced with even basic anti-air. Always try to hide them from enemy's radars - surprise is their strength. Useful as a defense of last resort too.",
+			tooltipWeapon = "Paralyzer Beam",			
 			wingsurface = 1.0,
 		},
 		sfxtypes = { 

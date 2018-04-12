@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "118 40 119",
 		collisionvolumetype = "Box",
 		corpse = "DEAD",
-		description = "Produces Amphibious/Underwater Units",
+		description = "Produces Amphibious Underwater Units",
 		energystorage = 150,
 		explodeas = "largeBuildingexplosiongeneric-uw",
 		footprintx = 8,
@@ -41,13 +41,13 @@ return {
 		workertime = 150,
 		yardmap = "oooooooooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCo",
 		buildoptions = {
-			[1] = "armbeaver",
-			[2] = "armpincer",
-			[3] = "armcroc",
-			[4] = "armjeth",
-			[5] = "armaak",
-			[6] = "armdecom",
-			-- [7] = "armsub",
+			"armbeaver",
+			"armpincer",
+			"armcroc",
+			"armjeth",
+			"armaak",
+
+			"armdecom",
 		},
 		customparams = {
 			

@@ -35,6 +35,7 @@ return {
 		sightdistance = 273,
 		yardmap = "oooooooooooooooooooo",
 		customparams = {
+			tooltipEnergy = true,
 			bar_collisionvolumescales = "97 42 51",
 			techlevel = 2,
 			removewait = true,

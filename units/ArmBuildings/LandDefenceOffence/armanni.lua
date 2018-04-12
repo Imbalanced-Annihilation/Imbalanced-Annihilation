@@ -43,6 +43,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
+			tooltipWeapon = "Annihilator",
 			techlevel = 2,
 			removewait = true,
 		},

@@ -34,6 +34,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
+			tooltipWeapon = "Rapid Plasma",
 			techlevel = 2,
 			removewait = true,
 		},

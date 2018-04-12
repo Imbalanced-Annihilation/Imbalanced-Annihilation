@@ -4,7 +4,7 @@ return {
 		brakerate = 0.75,
 		buildcostenergy = 1400,
 		buildcostmetal = 70,
-		buildpic = "ARMATLAS.PNG",
+		buildpic = "ARMATLAS.DDS",
 		buildtime = 3850,
 		canfly = true,
 		canmove = true,
@@ -43,7 +43,6 @@ return {
 		verticalSpeed = 5.0,
 		blocking = false,
 		customparams = {
-			description_long = "The Atlas is an airborne transportation unit. It can pick up all T1 land based units and T2, with exception of heavy ones, like Fatboy or Goliath. Use it for unexpected unit drops bypassing your enemy's defense line, but don't forget to scout first for any anti-air units. Drop your commander into their bases to Dgun all structures and humiliate your opponents. Can be used for transporting nano towers too, which enables you to move your buildpower where you currently need it.",
 			paralyzemultiplier = 0.025,
 			wingsurface = 0.1,
 		},

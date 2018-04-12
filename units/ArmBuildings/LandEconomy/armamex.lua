@@ -45,6 +45,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
+			specialTooltip = "EMP Explosion",
 			cvBuildable = true,
 			metal_extractor = 1,
 			removewait = true,

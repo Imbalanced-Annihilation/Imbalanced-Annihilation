@@ -87,8 +87,17 @@ return {
 			"corfdrag",
 			"corfrt",
 			"cortl",
+
+			"cormine1",
+			"cormine2",
+			"cormine3",
 		},
 		customparams = {
+			tooltipDecoy = true,
+			tooltipWeapon = "Laser",
+			specialTooltip = "Can Capture with 1100 speed",
+			specialTooltip2 = "Can Cloak",
+			specialTooltip3 = "Can Attack underwater",
 			techlevel = 2,
 			area_mex_def = "cormex",
 			paralyzemultiplier = 0.025,

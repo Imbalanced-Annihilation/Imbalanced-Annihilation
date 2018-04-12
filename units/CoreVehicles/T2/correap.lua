@@ -4,7 +4,7 @@ return {
 		brakerate = 0.21,
 		buildcostenergy = 10000,
 		buildcostmetal = 630,
-		buildpic = "CORREAP.DDS",
+		buildpic = "CORREAP.PNG",
 		buildtime = 11501,
 		canmove = true,
 		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -42,7 +42,8 @@ return {
 		turnrate = 434*0.8,
 		script = "BASICTANKSCRIPT.LUA",
 		customparams = {
-            core_tank = "1",
+			tooltipWeapon = "Plasma",
+			core_tank = "1",
 			techlevel = 2,
 			--ANIMATION DATA
 				--PIECENAMES HERE

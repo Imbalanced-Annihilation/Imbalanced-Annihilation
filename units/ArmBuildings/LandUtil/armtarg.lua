@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armtarg_aoplane.dds",
-		buildpic = "ARMTARG.DDS",
+		buildpic = "ARMTARG.PNG",
 		buildtime = 8707,
 		canrepeat = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -36,6 +36,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
+			tooltipUpkeep = true,
 			bar_footprintx = 3,
 			bar_footprintz = 3,
 			bar_buildinggrounddecalsizex = 5,

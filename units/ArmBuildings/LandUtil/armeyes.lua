@@ -33,6 +33,7 @@ return {
 		waterline = 5,
 		yardmap = "o",
 		customparams = {
+			tooltipSight = true,
 			removewait = true,
 			removestop = true,
 		},

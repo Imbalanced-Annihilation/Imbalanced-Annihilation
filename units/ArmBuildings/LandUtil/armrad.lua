@@ -41,6 +41,8 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "oooo",
 		customparams = {
+			tooltipSight = true,
+			tooltipRadar = true,
 			removewait = true,
 			removestop = true,
 		},

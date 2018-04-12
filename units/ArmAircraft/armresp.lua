@@ -41,7 +41,6 @@ return {
 		reclaimspeed = 75,
 		blocking = false,
 		customparams = {
-			description_long = "",
 			wingsurface = 0.5,
 			area_mex_def = "armmex",
 		},

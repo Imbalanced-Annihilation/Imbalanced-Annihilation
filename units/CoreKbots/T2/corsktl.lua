@@ -43,6 +43,8 @@ return {
 		turnrate = 1122,
 		upright = true,
 		customparams = {
+			specialTooltip = "7500 Self-Destruct, 3000 Killed Explosion",
+			specialTooltip2 = "Can Cloak",
 			techlevel = 2,
 		},
 		sfxtypes = { 

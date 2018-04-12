@@ -38,6 +38,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo oGGo oGGo oooo",
 		customparams = {
+			tooltipEnergy = true,
 			cvBuildable = true,
 			removewait = true,
 			removestop = true,

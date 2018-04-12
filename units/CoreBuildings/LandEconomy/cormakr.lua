@@ -35,6 +35,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooo",
 		customparams = {
+			tooltipUpkeep = true,
 			bar_buildinggrounddecalsizex = 4,
 			bar_buildinggrounddecalsizey = 4,
 			bar_footprintx = 3,

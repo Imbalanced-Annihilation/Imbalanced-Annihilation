@@ -34,6 +34,9 @@ return {
 		turnrate = 650,
 		blocking = false,
 		customparams = {
+			tooltipSight = true,
+			tooltipRadar = true,
+			tooltipSonar = true,
 			wingsurface = 0.50,
 			techlevel = 2,
 		},

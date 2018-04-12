@@ -31,7 +31,8 @@ return {
 		turnrate = 680,
 		blocking = false,
 		customparams = {
-			
+			tooltipWeapon = "AA Missiles",
+			weaponMainCategory = "vtol",
 		},
 		sfxtypes = { 
  			pieceExplosionGenerators = { 

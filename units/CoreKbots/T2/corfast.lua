@@ -47,8 +47,8 @@ return {
 			"corrad",
 			"corsolar",
 			"corexp",
-			"corlab",
-			"cornanotc",
+			"corestor",
+			"cormstor",
 
 			"coreyes",			
 			"corplas",
@@ -57,20 +57,22 @@ return {
 			"cordl",
 			
 			"corjamt",
+			"corlab",
 			"cortoast",
 			"cormadsam",
 			"corflak",
-			"corcrash",
 
+			"cornanotc",
 			"corak",
-			"corck",			
-			"cormando",
-			"corcan",
+			"corck",
+			"corpyro",
+			"corcrash",
+		
 			"coramph",
-			
-			"cordecom",
+			"cormando",
 			"corcs",
 			"corroy",
+			"cordecom",
 		},
 		customparams = {
 			techlevel = 2,

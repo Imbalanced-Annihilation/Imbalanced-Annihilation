@@ -42,6 +42,8 @@ return {
 		turninplacespeedlimit = 1.63786,
 		turnrate = 618.20001,
 		customparams = {
+			tooltipWeapon3 = "Flak",
+			weapon3MainCategory = "vtol",
 			arm_tank = "1",
 			techlevel = 2,
 		},

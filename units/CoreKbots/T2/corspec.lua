@@ -14,7 +14,7 @@ return {
 		collisionvolumescales = "24 27 25",
 		collisionvolumetype = "Box",
 		corpse = "dead",
-		description = "Radar Jammer Kbot (450 Radius)",
+		description = "Radar Jammer Kbot",
 		energymake = 8,
 		energyuse = 100,
 		explodeas = "smallexplosiongeneric",

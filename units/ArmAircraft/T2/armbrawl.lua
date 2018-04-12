@@ -35,6 +35,7 @@ return {
 		turnrate = 800,
 		blocking = false,
 		customparams = {
+			tooltipWeapon = "EMG",
 			wingsurface = 0.35,
 			techlevel = 2,
 		},

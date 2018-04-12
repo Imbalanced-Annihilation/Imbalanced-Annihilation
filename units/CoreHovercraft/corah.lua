@@ -5,7 +5,7 @@ return {
 		brakerate = 0.336,
 		buildcostenergy = 4700,
 		buildcostmetal = 250,
-		buildpic = "CORAH.DDS",
+		buildpic = "CORAH.PNG",
 		buildtime = 3650,
 		canmove = true,
 		category = "ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR SURFACE",
@@ -21,7 +21,7 @@ return {
 		footprintz = 3,
 		idleautoheal = 5,
 		idletime = 1800,
-		maxdamage = 1008,
+		maxdamage = 808,
 		maxslope = 16,
 		maxvelocity = 3.34,
 		maxwaterdepth = 0,
@@ -38,7 +38,8 @@ return {
 		turninplacespeedlimit = 2.2044,
 		turnrate = 470,
 		customparams = {
-			
+			tooltipWeapon = "AA Missiles",
+			weaponMainCategory = "vtol",
 		},
 		featuredefs = {
 			dead = {

@@ -36,6 +36,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
+			tooltipWeapon = "Rapid Plasma",
 			techlevel = 2,
 			removewait = true,
 		},

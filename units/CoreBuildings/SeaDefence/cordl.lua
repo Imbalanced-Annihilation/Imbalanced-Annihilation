@@ -37,6 +37,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
+			tooltipWeapon = "Torpedo",
 			bar_collisionvolumeoffsets = "0 3 0",
 			bar_collisionvolumescales = "38 52 38",
 			removewait = true,

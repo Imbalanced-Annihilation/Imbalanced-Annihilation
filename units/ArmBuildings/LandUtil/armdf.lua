@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armdf_aoplane.dds",
-		buildpic = "ARMDF.DDS",
+		buildpic = "ARMFUS.DDS",
 		buildtime = 7500,
 		canrepeat = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -37,6 +37,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooo ooooooo ooooooo ooooooo",
 		customparams = {
+			tooltipDecoy = true,
 			techlevel = 2,
 			removewait = true,
 			removestop = true,

@@ -34,6 +34,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooo",
 		customparams = {
+			specialTooltip = "Up to 2500 Damage in 512 AoE",
 			techlevel = 2,
 			removewait = true,
 		},

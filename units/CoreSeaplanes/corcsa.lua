@@ -44,60 +44,58 @@ return {
 		blocking = false,
 		buildoptions = {
 			"corsolar",
-			"coradvsol",
 			"corwin",
-			"corgeo",
+			"cormex",
+			"corestor",
 			"cormstor",
 
-			"corestor",
-			"cormex",
-			"corexp",
+			"corrad",
 			"cormakr",
 			"corlab",
-
 			"corvp",
 			"corap",
+
+			"coradvsol",
+			"corgeo",
+			"coramsub",
+			"corsy",
 			"corhp",
-			"cornanotc",
-			"cornanotcplat",
 
 			"coreyes",
-			"corrad",
-			"corjamt",
-			"cordrag",
-			"cormaw",
-
 			"corllt",
+			"cordrag",
+			"corrl",
+			"cordl",
+
+			"corjamt",
+			"corexp",
+			"cormaw",
 			"corplas",
+			"cormadsam",
+
+			"cornanotc",
 			"corhlt",
 			"corpun",
-			"corrl",
-
-			"cormadsam",
 			"corerad",
-			"cordl",
-			"corjuno",			
-			"corfhp",
+			"corjuno",
 
-			"corsy",
-			"coramsub",
-			"corplat",
 			"cortide",
-			"coruwmex",
-
 			"corfmkr",
+			"coruwmex",
+			"coruwes",
 			"coruwms",
-			"coruwes",			
+			
 			"corsonar",
 			"corfdrag",
+			"corsy",
+			"corplat",
+			"corfhp",
 
-			"corgplat",
+			"cortl",
 			"corfhlt",
 			"corfrt",
-			"cortl",
 		},
 		customparams = {
-			
 			area_mex_def = "coruwmex",
 		},
 		sfxtypes = { 

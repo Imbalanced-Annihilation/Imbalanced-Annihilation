@@ -4,7 +4,7 @@ return {
 		brakerate = 0.564,
 		buildcostenergy = 5800,
 		buildcostmetal = 600,
-		buildpic = "CORHRK.DDS",
+		buildpic = "CORHRK.PNG",
 		buildtime = 6600,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -36,6 +36,7 @@ return {
 		turnrate = 1103,
 		upright = true,
 		customparams = {
+			tooltipWeapon = "Starburst Rockets",
 			techlevel = 2,
 		},
 		featuredefs = {

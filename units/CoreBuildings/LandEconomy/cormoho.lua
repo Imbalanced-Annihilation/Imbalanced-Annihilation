@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "cormoho_aoplane.dds",
 		buildingMask = 0,
-		buildpic = "CORMOHO.DDS",
+		buildpic = "CORMOHO.PNG",
 		buildtime = 14125,
 		canrepeat = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -41,6 +41,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
+			tooltipMetal = true,
 			techlevel = 2,
 			cvBuildable = true,
 			metal_extractor = 4,

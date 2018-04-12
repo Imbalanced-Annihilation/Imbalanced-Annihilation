@@ -4,7 +4,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 5000,
 		buildcostmetal = 640,
-		buildpic = "ARMTSHIP.DDS",
+		buildpic = "ARMTSHIP.PNG",
 		buildtime = 9150,
 		canattack = false,
 		canmove = true,
@@ -31,6 +31,7 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "hugeExplosionGenericSelfd",
 		sightdistance = 550,
+		minTransportMass = 2, --for armfrt/corfrt
 		transportcapacity = 40,
 		transportsize = 4,
 		transportunloadmethod = 0,

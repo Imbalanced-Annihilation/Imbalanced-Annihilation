@@ -8,7 +8,7 @@ return {
 		builddistance = 136,
 		builder = true,
 		shownanospray = false,
-		buildpic = "CORSPY.DDS",
+		buildpic = "CORSPY.PNG",
 		buildtime = 22247,
 		canassist = false,
 		canguard = false,
@@ -51,6 +51,7 @@ return {
 		upright = true,
 		workertime = 50,
 		customparams = {
+			specialTooltip = "Can Cloak, EMP Self-Destruct",
 			techlevel = 2,
 		},
 		featuredefs = {

@@ -647,39 +647,11 @@ RestoreAfterDelay()
 	bAiming = FALSE;
 }
 
-AimTertiary(heading, pitch)
-{
-    if ( get IN_WATER(0) == 0 )
-    {
-     return (0);
-    }
-	signal SIG_AIM_3;
-	set-signal-mask SIG_AIM_3;
-	turn head to y-axis heading speed <60.000000>;
-	wait-for-turn head around y-axis;
-	return (1);
-}
-
-FireTertiary()
-{
-	sleep 100;
-}
-
-AimFromTertiary(piecenum)
-{
-	piecenum = head;
-}
-
-QueryTertiary(piecenum)
-{
-	piecenum = head;
-}
-
 AimPrimary(heading, pitch)
 {
-    if ( get IN_WATER(0) == 1 )
+    if (get PIECE_Y(head) < 0)
     {
-     return (0);
+		return (0);
     }
 	signal SIG_AIM;
 	set-signal-mask SIG_AIM;
@@ -713,6 +685,56 @@ AimFromPrimary(piecenum)
 }
 
 QueryPrimary(piecenum)
+{
+	if( !gun_1 )
+	{
+		piecenum = gunflare;
+	}
+	if( gun_1 )
+	{
+		piecenum = laserflare;
+	}
+}
+
+AimSecondary(heading, pitch)
+{
+    if (get PIECE_Y(head) >= 0)
+    {
+		return (0);
+    }
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	bAiming = TRUE;
+	turn head to y-axis heading speed <200.000000>;
+	wait-for-turn head around y-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+FireSecondary()
+{
+	if( !gun_1 )
+	{
+		show gunflare;
+		sleep 200;
+		hide gunflare;
+	}
+	if( gun_1 )
+	{
+		show laserflare;
+		sleep 200;
+		hide laserflare;
+	}
+	sleep 400;
+	gun_1 = !gun_1;
+}
+
+AimFromSecondary(piecenum)
+{
+	piecenum = head;
+}
+
+QuerySecondary(piecenum)
 {
 	if( !gun_1 )
 	{

@@ -49,22 +49,22 @@ return {
 		waterline = 30,
 		workertime = 300,
 		buildoptions = {
+			"corason",
 			"coruwfus",
 			"coruwmme",
 			"coruwmmm",
-			"corfatf",
-			"corplat",
+			"coratl",
 
+			"corfatf",
 			"corsy",
 			"corasy",
-			"corgantuw",
 			"coramsub",
-			"corason",
+			"corplat",
 
-			"corenaa",
-			"coratl",
+			"corgantuw",
 		},
 		customparams = {
+			specialTooltip = "Can Capture with 1000 speed",
 			techlevel = 2,
 			area_mex_def = "coruwmme",
 		},

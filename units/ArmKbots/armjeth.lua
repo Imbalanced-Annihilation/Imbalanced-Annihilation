@@ -13,7 +13,7 @@ return {
 		collisionvolumescales = "22.337184906006 33.337184906006 17.337184906006",
 		collisionvolumetype = "box",
 		corpse = "DEAD",
-		description = "Amphibious Anti-air Kbot",
+		description = "Amphibious Anti-Air Kbot",
 		energymake = 0.4,
 		energyuse = 0.4,
 		explodeas = "smallExplosionGeneric-phib",
@@ -36,7 +36,8 @@ return {
 		turnrate = 1118,
 		upright = true,
 		customparams = {
-			description_long = "Jethro is a cheap mobile anti air (AA) Kbot, that can easily take down light aircrafts, like scouts, or transporters. Always send a few with your army to protect it from EMP drones/gunships or commander drop tactics. Remember that it has no land-to-land weapons, so it is not able to defend itself. In bigger numbers it can even prevent bombing runs. It is able to walk underwater - combine it with amphibious units!",  
+			tooltipWeapon3 = "AA Missiles",
+			weapon3MainCategory = "vtol",
 		},
 		featuredefs = {
 			dead = {

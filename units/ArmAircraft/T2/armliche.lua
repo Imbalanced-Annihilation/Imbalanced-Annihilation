@@ -34,6 +34,7 @@ return {
 		turnrate = 540,
 		blocking = false,
 		customparams = {
+			tooltipWeapon = "Atomic Bomb",
 			wingsurface = 0.8,
 			techlevel = 2,
 		},

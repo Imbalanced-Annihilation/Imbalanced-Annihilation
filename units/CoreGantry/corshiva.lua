@@ -35,6 +35,7 @@ return {
 		turnrate = 616,
 		upright = true,
 		customparams = {
+			tooltipWeapon = "Plasma",
 			techlevel = 3,
 		},
 		featuredefs = {

@@ -15,11 +15,6 @@ walk()
 {
 	if( bMoving )
 	{
-		if( notBuilding )
-		{
-			turn luparm to x-axis <45.010989> speed <225.000000>;
-			turn ruparm to x-axis <-45.010989> speed <225.000000>;
-		}
 		move pelvis to y-axis [-0.500000] speed [5.963855] *  currentSpeed / 100;
 		turn lthigh to x-axis <-62.934066> speed <750.659341> *  currentSpeed / 100;
 		turn rthigh to x-axis <3.505495> speed <41.812531> *  currentSpeed / 100;
@@ -192,11 +187,6 @@ walk()
 	}
 	if( bMoving )
 	{
-		if( notBuilding )
-		{
-			turn luparm to x-axis <-45.010989> speed <225.000000>;
-			turn ruparm to x-axis <45.010989> speed <225.000000>;
-		}
 		move pelvis to y-axis [-0.500000] speed [1.192771] *  currentSpeed / 100;
 		turn lthigh to x-axis <-62.934066> speed <4.259898> *  currentSpeed / 100;
 		turn rthigh to x-axis <3.505495> speed <163.580026> *  currentSpeed / 100;
@@ -533,6 +523,28 @@ walklegs()
 	sleep animSpeed;
 }
 
+WalkArms()
+{
+	while (TRUE)
+	{
+		if (bMoving)
+		{
+			turn luparm to x-axis <30.010989> speed <500.000000>;
+			turn ruparm to x-axis <-30.010989> speed <500.000000>;
+			wait-for-turn luparm around x-axis;
+			wait-for-turn ruparm around x-axis;
+			turn luparm to x-axis <-30.010989> speed <500.000000>;
+			turn ruparm to x-axis <30.010989> speed <500.000000>;
+			wait-for-turn luparm around x-axis;
+			wait-for-turn ruparm around x-axis;
+		}
+		else
+		{
+			sleep 100;
+		}
+	}
+}
+
 MotionControl(Func_Var_1, Func_Var_2)
 {
 	while( TRUE )
@@ -543,7 +555,8 @@ MotionControl(Func_Var_1, Func_Var_2)
 		{
 			if( Func_Var_2 )
 			{
-				call-script walk();
+				//call-script walk();
+				call-script walklegs();
 			}
 			else
 			{
@@ -568,7 +581,8 @@ UnitSpeed()
 {
 	while(TRUE)
 	{
-		currentSpeed = (get CURRENT_SPEED)*100/moveSpeed;
+		//currentSpeed = (get CURRENT_SPEED)*100/moveSpeed;
+		currentSpeed = (get CURRENT_SPEED)*100/moveSpeed * 5;
 		if (currentSpeed<20) currentSpeed=20;
 		animSpeed = 6000 / currentSpeed;
 		sleep 142;
@@ -608,8 +622,8 @@ Go()
 {
 	wait-for-move luparm along x-axis;
 	wait-for-move ruparm along x-axis;
-	turn luparm to x-axis <-45.010989> speed <160.000000>;
-	turn ruparm to x-axis <-45.010989> speed <160.000000>;
+	turn luparm to x-axis <-90.010989> speed <160.000000>;
+	turn ruparm to x-axis <-90.010989> speed <160.000000>;
 }
 
 Stop()
@@ -659,8 +673,9 @@ Create()
 	moveSpeed = get MAX_SPEED;
 	animSpeed = 60;
 	start-script SmokeUnit();
-	turn lnano to x-axis <45.010989> now;
-	turn rnano to x-axis <45.010989> now;
+	//start-script WalkArms();
+	//turn lnano to x-axis <45.010989> now;
+	//turn rnano to x-axis <45.010989> now;
 }
 
 Activate()
@@ -687,7 +702,7 @@ StopBuilding()
 {
 	signal SIG_BUILD;	
 	set-signal-mask SIG_BUILD;
-	sleep 6000;
+	sleep 2000;
 	set-signal-mask 0;
 	signal SIG_BUILD;	
 	start-script RequestState(1);

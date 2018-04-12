@@ -2,10 +2,10 @@ return {
 	armroy = {
 		activatewhenbuilt = true,
 		buildangle = 16384,
-		buildcostenergy = 4800,
-		buildcostmetal = 810,
+		buildcostenergy = 6049,
+		buildcostmetal = 1053,
 		buildpic = "ARMROY.DDS",
-		buildtime = 10200,
+		buildtime = 13391,
 		canmove = true,
 		category = "ALL NOTLAND MOBILE WEAPON NOTSUB SHIP NOTAIR NOTHOVER SURFACE",
 		collisionvolumeoffsets = "0 -10 -2",
@@ -22,7 +22,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		maxdamage = 3720,
+		maxdamage = 3090,
 		minwaterdepth = 12,
 		movementclass = "BOAT44X4",
 		name = "Crusader",
@@ -37,13 +37,13 @@ return {
 		acceleration = 1.90/120,
 		brakerate = 1.90/35,
 		turninplace = true,
-		maxvelocity = 1.90,
+		maxvelocity = 2.839,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.64*1.90,
 		turnrate = 200,
 		--end move
 		customparams = {
-			
+			tooltipWeapon = "Plasma",
 		},
 		featuredefs = {
 			dead = {
@@ -117,7 +117,6 @@ return {
 		},
 		weapondefs = {
 			plasma = {
-				accuracy = 256,
 				areaofeffect = 32,
 				avoidfeature = false,
 				craterareaofeffect = 0,
@@ -131,7 +130,7 @@ return {
 				noselfdamage = true,
 				proximitypriority = -0.1,
 				range = 700,
-				reloadtime = 1.875,
+				reloadtime = 1.2,
 				soundhit = "xplomed2",
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.5,
@@ -142,7 +141,8 @@ return {
 				weaponvelocity = 310,
 				damage = {
 					bombers = 56,
-					default = 240,
+					default = 175,
+					corpun = 175*0.7,
 					fighters = 56,
 					vtol = 56,
 					subs = 5,
@@ -182,7 +182,6 @@ return {
 				weaponvelocity = 140,
 				damage = {
 					default = 187,
-					subs = 270,
 				},
 			},
 		},

@@ -13,7 +13,7 @@ return {
 		buildingGroundDecalType="armnanotc_aoplane.dds",
 		buildpic = "ARMNANOTCPLAT.DDS",
 		buildtime = 5312,
-		cantbetransported = true,
+		cantbetransported = false,
 		canrepeat = false,
 		category = "ALL NOTSUB  NOWEAPON NOTAIR NOTHOVER SURFACE",
 		collisionvolumeoffsets = "0 0 0",
@@ -30,8 +30,8 @@ return {
 		mass = 700,
 		maxdamage = 500,
 		maxslope = 10,
-		maxwaterdepth = 50000000,
-		minwaterdepth = 12,
+		--maxwaterdepth = 50000000,
+		minwaterdepth = 2,
 		floater = true,
 		movementclass = "NANO",
 		name = "Nano Turret",
@@ -43,9 +43,11 @@ return {
 		turnrate = 1,
 		upright = true,
 		useBuildingGroundDecal = false,
+		waterLine = 0.3,
 		workertime = 200,
 		customparams = {
-
+			notTransportedByOthers = true,
+			unloadedSeaOnly = true,
 		},
 		sfxtypes = { 
  			pieceExplosionGenerators = { 

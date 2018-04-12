@@ -1,6 +1,7 @@
 return {
 	cortruck = {
 		acceleration = 0.04,
+		activateWhenBuilt = true,
 		brakerate = 0.8,
 		buildcostenergy = 3700,
 		buildcostmetal = 450,
@@ -12,7 +13,7 @@ return {
 		collisionvolumescales = "47 37 75",
 		collisionvolumetype = "Box",
 		corpse = "DEAD",
-		description = "Amphibious Transport Truck (1100 Transport Mass, 1100 Radar Range)",
+		description = "Amphibious Transport Truck",
 		explodeas = "hugeexplosiongeneric",
 		footprintx = 3,
 		footprintz = 3,
@@ -27,6 +28,7 @@ return {
 		name = "Intruder",
 		objectname = "CORTRUCK",
 		radarDistance = 1100,
+		radarEmitHeight = 40,
 		seismicsignature = 0,
 		selfdestructas = "mediumExplosionGenericSelfd-builder",
 		sightdistance = 340,
@@ -40,6 +42,7 @@ return {
 		transportUnloadMethod = 0,
 		loadingRadius = 75,
 		holdSteady = true,
+		releaseHeld = true,
 		unloadSpread = 1,
 		cantBeTransported = true,
 		turninplace = true,
@@ -47,7 +50,9 @@ return {
 		turninplacespeedlimit = 1.1979,
 		turnrate = 258,
 		customparams = {
-			description_long = "",
+			tooltipRadar = true,
+			specialTooltip = "Transports up to 7 units 2x2 with total mass of 1100 or 1 Commander",
+			specialTooltip2 = "Unloads Commander if destroyed",
 		},
 		featuredefs = {
 			dead = {

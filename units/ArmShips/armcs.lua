@@ -1,12 +1,12 @@
 return {
 	armcs = {
-		buildcostenergy = 2000,
-		buildcostmetal = 200,
+		buildcostenergy = 227,
+		buildcostmetal = 237,
 		builddistance = 200,
 		builder = true,
 		shownanospray = false,
-		buildpic = "ARMCS.DDS",
-		buildtime = 3460,
+		buildpic = "ARMCS.PNG",
+		buildtime = 4170,
 		canmove = true,
 		category = "ALL NOTLAND MOBILE NOTSUB NOWEAPON SHIP NOTAIR NOTHOVER SURFACE",
 		collisionvolumeoffsets = "0 -5 -1",
@@ -34,7 +34,7 @@ return {
 		sightdistance = 400,
 		terraformspeed = 1250,
 		waterline = 0,
-		workertime = 125,
+		workertime = 150,
 		--move
 		acceleration = 2.18/90,
 		brakerate = 2.18/25,
@@ -69,13 +69,11 @@ return {
 			"armplat",
 			"armfhp",
 
-			"armnanotcplat",
+			"armtl",
 			"armasy",
 			"armfdrag",
 			"armfhlt",
 			"armfrt",
-
-			"armtl",
 		},
 		customparams = {
 			

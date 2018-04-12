@@ -2,26 +2,9 @@ local wreck_metal = 2500
 if (Spring.GetModOptions) then
 	wreck_metal = Spring.GetModOptions().comm_wreck_metal or 2500
 end
-function deepcopy(orig)
-    local orig_type = type(orig)
-    local copy
-    if orig_type == 'table' then
-        copy = {}
-        for orig_key, orig_value in next, orig, nil do
-            copy[deepcopy(orig_key)] = deepcopy(orig_value)
-        end
-        setmetatable(copy, deepcopy(getmetatable(orig)))
-    else -- number, string, boolean, etc
-        copy = orig
-    end
-    return copy
-end
 
---Stats Table:
-VFS.Include("unbaconfigs/stats.lua")
-VFS.Include("unbaconfigs/buildoptions.lua")
-
-	tablecorcom = {
+return {
+	corcom = {
 		acceleration = 0.18,
 		activatewhenbuilt = true,
 		autoheal = 5,
@@ -118,11 +101,10 @@ VFS.Include("unbaconfigs/buildoptions.lua")
 			"corfrt",
 			"cortl",
 			
-			"armcom",
-			"armwar",
-			"armfark",
+			"corgate",
 		},
 		customparams = {
+			teleportationGatesBuildSpeedModifier = "1000",
 			techlevel = 2,
 			--death_sounds = "commander",
 			iscommander = true,
@@ -301,7 +283,7 @@ VFS.Include("unbaconfigs/buildoptions.lua")
 					subs = 5,
 				},
 			},
-			armcomsealaser = {
+			corcomsealaser = {
 				areaofeffect = 12,
 				avoidfeature = false,
 				beamtime = 0.3,
@@ -322,7 +304,7 @@ VFS.Include("unbaconfigs/buildoptions.lua")
 				laserflaresize = 5,
 				name = "J7NSLaser",
 				noselfdamage = true,
-				range = 260,
+				range = 280,
 				reloadtime = 1,
 				rgbcolor = "0.2 0.2 0.6",
 				rgbcolor2 = "0.2 0.2 0.2",
@@ -392,120 +374,12 @@ VFS.Include("unbaconfigs/buildoptions.lua")
 			},
 			[2] = {
 				badtargetcategory = "VTOL",
-				def = "ARMCOMSEALASER",
+				def = "CORCOMSEALASER",
 			},
 			[3] = {
 				def = "DISINTEGRATOR",
 				onlytargetcategory = "NOTSUB",
 			},
 		},
-	}
-if (Spring.GetModOptions) and Spring.GetModOptions().mo_unba and Spring.GetModOptions().mo_unba == "enabled" then
-	tablecorcom.autoheal = 2
-	tablecorcom.power = CommanderPower
-	tablecorcom.weapondefs.corcomlaser.weapontype = "LaserCannon"
-	tablecorcom.weapons = {}
-	tablecorcom.script = "corcom_lus.lua"
-	tablecorcom.objectname = "UNBACORCOM.3DO"
-		--Weapon: Laser
-	tablecorcom.weapondefs.corcomlaser2 = deepcopy(tablecorcom.weapondefs.corcomlaser)
-	tablecorcom.weapondefs.corcomlaser.weapontype = "BeamLaser"
-	tablecorcom.weapondefs.corcomlaser2.damage.default = Damages[2]
-	tablecorcom.weapondefs.corcomlaser2.range = Range[2]
-	tablecorcom.weapondefs.corcomlaser2.areaofeffect = AOE[2]
-	tablecorcom.weapondefs.corcomlaser2.reloadtime = ReloadTime[2]
-for i = 3,11 do
-	I = tostring(i)
-	H = tostring(i-1)
-	tablecorcom.weapondefs["corcomlaser"..I] = deepcopy(tablecorcom.weapondefs["corcomlaser"..H])
-	tablecorcom.weapondefs["corcomlaser"..I].damage.default = Damages[i]
-	tablecorcom.weapondefs["corcomlaser"..I].range = Range[i]
-	tablecorcom.weapondefs["corcomlaser"..I].areaofeffect = AOE[i]
-	tablecorcom.weapondefs["corcomlaser"..I].reloadtime = ReloadTime[i]
-	if i == 3 then
-		tablecorcom.weapondefs.corcomlaser3.rgbcolor = "0.75 0.25 0"
-	elseif i == 6 then
-		tablecorcom.weapondefs.corcomlaser6.rgbcolor = "0.5 0.5 0"
-	elseif i == 8 then
-		tablecorcom.weapondefs.corcomlaser8.rgbcolor = "0.25 0.75 0"
-	elseif i == 10 then
-		tablecorcom.weapondefs.corcomlaser10.rgbcolor = "0 1 0"
-	end
-end
-
-for i = 1,11 do
-	if i == 1 then
-		tablecorcom.weapons[1] = {
-				def = "corcomlaser",
-				onlytargetcategory = "NOTSUB",
-				}
-	else
-		tablecorcom.weapons[i] = {
-				def = "corcomlaser"..tostring(i),
-				onlytargetcategory = "NOTSUB",
-				}
-	end
-end
-	--Weapon: SeaLaser
-tablecorcom.weapondefs.armcomsealaser2 = deepcopy(tablecorcom.weapondefs.armcomsealaser)
-	tablecorcom.weapondefs["armcomsealaser2"].damage.default = Damages21[2]
-	tablecorcom.weapondefs["armcomsealaser2"].damage.subs = Damages22[2]*Damages21[2]
-	tablecorcom.weapondefs["armcomsealaser2"].range = Range2[2]
-	tablecorcom.weapondefs["armcomsealaser2"].areaofeffect = AOE2[2]
-	tablecorcom.weapondefs["armcomsealaser2"].reloadtime = ReloadTime2[2]
-for i = 3,11 do
-	I = tostring(i)
-	H = tostring(i-1)
-	tablecorcom.weapondefs["armcomsealaser"..I] = deepcopy(tablecorcom.weapondefs["armcomsealaser"..H])
-	tablecorcom.weapondefs["armcomsealaser"..I].damage.default = Damages21[i]
-	tablecorcom.weapondefs["armcomsealaser"..I].damage.subs = Damages22[i] * Damages21[i]
-	tablecorcom.weapondefs["armcomsealaser"..I].range = Range2[i]
-	tablecorcom.weapondefs["armcomsealaser"..I].areaofeffect = AOE2[i]
-	tablecorcom.weapondefs["armcomsealaser"..I].reloadtime = ReloadTime2[i]
-	if i == 3 then
-		tablecorcom.weapondefs.armcomsealaser3.rgbcolor = "0.75 0.25 0"
-	elseif i == 6 then
-		tablecorcom.weapondefs.armcomsealaser6.rgbcolor = "0.5 0.5 0"
-	elseif i == 8 then
-		tablecorcom.weapondefs.armcomsealaser8.rgbcolor = "0.25 0.75 0"
-	elseif i == 10 then
-		tablecorcom.weapondefs.armcomsealaser10.rgbcolor = "0 1 0"
-	end
-end
-
-for i = 12,22 do
-	if i - 11 == 1 then
-		tablecorcom.weapons[12] = {
-				def = "ARMCOMSEALASER",
-				badtargetcategory = "VTOL",
-				}
-	else
-		tablecorcom.weapons[i] = {
-				def = "ARMCOMSEALASER"..tostring(i-11),
-				badtargetcategory = "VTOL",
-				}
-	end
-end
-
-	--Weapon: Shield
-
-for i = 2,7 do
-	I = tostring(i)
-	H = tostring(i-1)
-	tablecorcom.weapondefs["repulsor"..I] = deepcopy(tablecorcom.weapondefs["repulsor"..H])
-	tablecorcom.weapondefs["repulsor"..I].shield.power = ShieldPower[i]
-end
-
-for i = 23,29 do
-	tablecorcom.weapons[i] = {
-			def = "REPULSOR"..tostring(i-22),
-			}
-end
-	
-tablecorcom.weapons[30] ={
-				def = "DISINTEGRATOR",
-				onlytargetcategory = "NOTSUB",
-			}
-tablecorcom.buildoptions = CoreDefsBuildOptions
-end
-return { corcom = deepcopy(tablecorcom) }
+	},
+}

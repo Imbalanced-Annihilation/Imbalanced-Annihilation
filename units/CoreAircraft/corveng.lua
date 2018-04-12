@@ -5,7 +5,7 @@ return {
 		brakerate = 0.065,
 		buildcostenergy = 2800,
 		buildcostmetal = 75,
-		buildpic = "CORVENG.PNG",
+		buildpic = "CORVENG.DDS",
 		buildtime = 3333,
 		canfly = true,
 		canmove = true,
@@ -30,6 +30,8 @@ return {
 		turnrate = 850,
 		blocking = false,
 		customparams = {
+			tooltipWeapon = "Missiles",
+			weaponMainCategory = "vtol",
 			wingsurface = 0.4,
 		},
 		sfxtypes = { 

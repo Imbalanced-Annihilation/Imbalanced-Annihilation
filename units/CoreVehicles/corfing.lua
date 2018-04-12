@@ -41,7 +41,9 @@ return {
 		turninplacespeedlimit = 0.99,
 		turnrate = 800,
 		customparams = {
-			description_long = "",
+			tooltipWeapon = "Salvo Rockets",
+			specialTooltip = "Deals most damage to tanks and least to structures",
+			specialTooltip2 = "Cannot move nor stop while shoots",
 		},
 		featuredefs = {
 			dead = {
@@ -51,7 +53,7 @@ return {
 				collisionvolumescales = "31.3571624756 22.0425262451 48.4261016846",
 				collisionvolumetype = "Box",
 				damage = 672,
-				description = "Slasher Wreckage",
+				description = "Scarfing Wreckage",
 				energy = 0,
 				featuredead = "HEAP",
 				featurereclamate = "SMUDGE01",
@@ -69,7 +71,7 @@ return {
 				blocking = false,
 				category = "heaps",
 				damage = 336,
-				description = "Slasher Heap",
+				description = "Scarfing Heap",
 				energy = 0,
 				featurereclamate = "SMUDGE01",
 				footprintx = 3,

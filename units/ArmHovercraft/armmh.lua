@@ -4,7 +4,7 @@ return {
 		brakerate = 0.336,
 		buildcostenergy = 3000,
 		buildcostmetal = 175,
-		buildpic = "ARMMH.DDS",
+		buildpic = "ARMMH.PNG",
 		buildtime = 3298,
 		canmove = true,
 		category = "ALL HOVER MOBILE WEAPON NOTSUB NOTSHIP NOTAIR SURFACE",
@@ -36,7 +36,7 @@ return {
 		turninplacespeedlimit = 1.5972,
 		turnrate = 470,
 		customparams = {
-			
+			tooltipWeapon = "Starburst Rockets",
 		},
 		featuredefs = {
 			dead = {

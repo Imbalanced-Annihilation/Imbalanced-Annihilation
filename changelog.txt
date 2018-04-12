@@ -1,15 +1,55 @@
-Imbalanced Annihilation v1.0.0
+Imbalanced Annihilation v1.0.1
 Balanced Annihilation mod by Krogoth
 
 My e-mail: imbalancedannihilation@gmail.com
 
-*** WIP ***
-
 First to say, I've imported some icons from OTA. Tell me if you like it.
 I've made it (and some other choices) because I personally think they are preferable (no retro feelings here).
 
-GROUND / HOVER:
----------------
+INTERFACE:
+----------
+Build menu tooltip shows such unit stats as weapon range, DPS, sight range (of some units), upkeep, etc.
+Increased font size.
+
+Disabled build icon prices by default
+
+Updated bottom tooltip
+
+SCRIPTS:
+--------
+Added following unitdef custom tags:
+- for tooltips:
+strings:
+tooltipWeapon, tooltipWeapon2, tooltipWeapon3,
+weaponMainCategory, weapon2MainCategory, weapon3MainCategory (~"default" when nil),
+weaponDamageRate (~"1" when nil),
+specialTooltip, specialTooltip2, ..., specialTooltip10
+flags:
+tooltipDecoy, tooltipSight, tooltipRadar, tooltipSonar,
+tooltipEnergy, tooltipEnergyAndStorage, tooltipWind, tooltipTidal, tooltipMetal, tooltipUpkeep,
+hideWorkerTooltip, hideJammerTooltip
+- for transported units:
+flags:
+notTransportedByOthers, paratrooper, unloadedFlatGround
+- other:
+flags:
+teleportationGates
+strings:
+teleportationGatesBuildSpeedModifier
+
+Replaced unit_transportable_nanos.lua and unit_transportfix.lua with unit_transport_tags.lua (based on them)
+
+Added unitconfigs/transport_survivors.lua to enlist units that may survive certain transports crashing
+
+BALANCE - GROUND / HOVER:
+-------------------------
+*NEW* ARM/CORE Gates - Teleportation Device
+Built by Commanders only. Has 1000x build time and Commanders gain 1000x build speed towards it.
+Teleports targeted ally units to the other controlled or ally Gates.
+Maximum 2 Gates per team.
+// It is experiment.
+// Gates have short load radius (170), make sure that needed units teleport properly.
+
 *NEW* ARM Meerkat - Stealthy Bomber Kbot (Tier 1)
 Cheap kbot that can take advantage of radar-invisibility and short but unobstructed vision.
 Has weak armor and is generally (very) bad at hitting maneuverable targets.
@@ -32,7 +72,7 @@ Deals most damage to tanks and least to structures.
 Reworked CORE Intruder. It is now a Tier 1 Amphibious Transport Truck.
 Can load up to 7 units 2x2 with total mass of 1100 or 1 Commander.
 Has 1100 radar range, costs 450 metal.
-Automatically unloads 1 unit before it is killed. (Commander is always unloaded)
+Unloads Commander if destroyed.
 Adjusted mass of Commanders and Decoy Commanders: 5000->1100 (crushResistance->5000).
 // Load/unload mechanics is far from great though. :S
 // For now it cannot transport Nano Towers.
@@ -51,13 +91,14 @@ Cannot be transported.
 
 Removed Hardened Metal and Energy Storages
 // (to make such type of buildings vulnerable at all stages)
+Combat Engineers (and Naval Engineers) can build Metal and Energy Storages
 
-For this version (might be temporarily), removed Garpike and Parrow
+For this version (might be temporarily), removed Garpike, Parrow and Experimental Hovercrafts (Gantry)
 
 ARM Commander:
 Velocity increased from 1.2 to 1.35
 Laser reload time increased from 0.4 to 0.5
-Laser range reduced from 300 to 280 
+Laser range reduced from 300 to 280
 Levels 1-5 got laser damage upgraded by 10/20/30/40/50% (no further)
 // Will be interesting to balance Arm/Core with move speed difference.
 
@@ -68,9 +109,6 @@ Laser reload time increased from 0.4 to 0.9
 Laser range increased from 300 to 320 and sea laser from 260 to 280
 Laser damage increased from 75 to 125 (75 against light scout vehicles)
 Levels 1-5 got laser damage upgraded by 15/30/40/50/60% (no further)
-
-Construction Ships:
-Can build Radar Tower and LLT
 
 ARM Metal Extractor:
 Changed model and reduced collision volume from "41 26 41" to "41 26 24"
@@ -85,6 +123,10 @@ Reduced damage from 35 to 30
 CORE Weasel:
 Increased attack range from 180 to 220
 
+CORE Muskrat:
+Increased velocity from 1.44 to 1.84
+Reduced health from 995 to 575
+
 ARM Hammer:
 Reduced idle time from 1800 to 400
 
@@ -93,14 +135,17 @@ Reduced build distance to minimum
 
 ARM Warrior:
 Changed model
-Can repair each other with 70 speed and other units with 50
+Can repair each other with 100 speed and other units with 70
 Increased turn rate from 770 to 1070
 Reduced velocity from 1.5 to 1.43
 Replaced laser with EMG about the same DPS
 // I would probably not change weapon if a single laser gun looked more convincing (the other gun is nano).
 
-Arm Peewee:
+ARM Peewee:
 Gains Zipper EMG at level 4 (no spray angle, +40 range)
+
+CORE AK:
+Gains Heavy Laser at level 8 (+150 damage)
 
 ARM Anaconda:
 Increased weapon velocity from 260 to 450
@@ -119,8 +164,6 @@ Increased attack range by 100
 ARM Consul:
 Changed build options:
 Solar Collector replaced with Advanced Solar Collector
-Peewee replaced with Jeffy
-Can build Infiltrator
 
 CORE Freaker:
 Changed build options:
@@ -134,11 +177,13 @@ ARM Zipper:
 Changed model and reduced collision volume scales from "25 31 11" to "17 31 11"
 Replaced EMG with fancy red/blue laser (about the same DPS)
 
+ARM Spider:
+Increased model by 45% and footprints by 1x1
+Increased attack range from 280 to 370
+Reload time from 1.75 to 1.0
+
 CORE Gimp:
 Replaced torpedoes with sea laser (stats are same as ground laser)
-
-CORE Commando:
-Can build Roach
 
 ARM Jammer (Jammer Vehicle):
 Increased velocity from 1.2 to 1.8
@@ -177,26 +222,65 @@ Replaced AA missile weapon with rocket (slightly worse than Rocko's)
 Reduced health from 1050 to 850
 
 Decoy Commanders:
-Build options are the same as of Commander
+Have the same build options as Commander except Gates plus mines
 
 CORE Decoy Commander:
 Increased capture speed from 900 to 1100
 
-AIR:
-----
+Ambusher/Toaster:
+Increased model by 20% and footprints from 3x3 to 4x4
+
+BALANCE - AIR:
+--------------
 *NEW* ARM Wasp - Resurrection/Reclaim/Repair Plane (Tier 1 Aircraft)
 Repairs twice as fast as construction aircraft and is more durable.
 // Gives another way to support the team if going air.
 
+Replaced CORE Dam Buster (Seaplane Bomber) with Osprey
+Fast and vulnerable.
+Does 1 riot cannon shot (like Leveler).
+
+Replaced ARM Tsunami (Seaplane Bomber) with Rondine
+Fires bombs similar to Dam Buster's (sprayed and water-bouncing) but deals no damage to subs.
+More maneuverable and has lower reload time.
+
+For this version, removed Core Cutter (Seaplane Gunship)
+
+CORE Hurricane:
+Changed model and added anti-air laser
+Reduced bombs damage from 333 to 300
+Increased sight range from 221 to 455
+
+ARM Phoenix:
+Reduced bombs damage from 266 to 250
++2 burst (5->7)
+
 CORE Krow (Flying Fortress):
 Can cloak (300/1000 cost, 340 reveal range)
 
-SEA:
-----
+BALANCE - SEA:
+--------------
 Replaced Floating Radars with Sonars
 // (to buff amphibious attacks)
 
-For this version (might be temporarily), removed Assault Frigates, Light Torpedo Boats and Gun Platforms
+For this version (might be temporarily), removed Assault Frigates, Light Torpedo Boats,
+Floating Nano Platforms, Gun Platforms and Flak Cannons
+
+Tidal Generators, Floating Metal Makers and Floating AA Towers can be transported by air
+
+Tweaked damage to ships:
+Guardian: 630->550, Ambusher/Toaster: 650->550, Punisher: 680->400
+Plasma ships deal 70% damage to Punisher
+
+Pitbull/Viper deal full damage to heavy ships (was 70%)
+
+Added 0.4 paralyze multiplier to Skeeter, Searcher, Decade, Supporter
+
+Construction Ships:
+Can build Radar Tower and LLT
+Increased worker time from 125 to 150
+Arm: e: 2000->2217, m: 200->237, bt: 3460->4170
+Core: e: 2000->2140, m: 200->244, bt: 3700->4470
 
 Skeeter/Searcher:
 Increased health from 120 to 345 (pre-10.00 stats)
@@ -206,19 +290,22 @@ ARM Skeeter:
 Increased cost (e: 700->1051, m: 65->107, bt: 1460->2062, pre-10.00 stats)
 Increased laser damage from 24 to 47
 Increased AA damage from 60 to 90
+Increased velocity from 4 to 4.4
 
 CORE Searcher:
 Increased cost (e: 650->978, m: 65->101, bt: 1350->1877, pre-10.00 stats)
 Increased laser damage from 32 to 57
 Increased AA damage from 45 to 90
+Increased velocity from 3.82 to 4.17
 
 CORE Supporter:
-Reduced max velocity from 3.3 to 2.5
+Reduced max velocity from 3.3 to 3.0
 Replaced laser with piercing laser (similar to Proteus)
 Deals most damage to large ships along their length
+Increased cost (e: 1400->2100, m: 165->205, bt: 2475->4075)
 
 ARM Decade:
-Reduced max velocity from 3.15 to 2.35
+Reduced max velocity from 3.15 to 2.9
 Increased EMG range from 280 to 330, damage from 9 to 14 and burst count from 3 to 4
 Increased cost (e: 1400->2000, m: 195->235, bt: 2590->4190)
 // Same as Supporter, it is more effective against large ships, because the accuracy is low at small ships.
@@ -226,16 +313,18 @@ Increased cost (e: 1400->2000, m: 195->235, bt: 2590->4190)
 ARM Crusader:
 Reduced health from from 3720 to 3090
 Removed bonus damage to submarines (270->187)
+Reload time from 1.875 to 1.2 and damage from 240 to 175, 256 accuracy -> default
+Velocity from 1.9 to 2.837
+Increased cost (e: 4800->6049, m: 810->1053, bt: 10200->13391)
 (pre-10.00 stats)
 
 CORE Enforcer:
 Reduced health from 4050 to 3360
+Reload time from 3.9 to 2.5 and damage from 530 to 385, 512 accuracy -> default
+Velocity from 1.76 to 2.737
+Increased cost (e: 4800->6140, m: 880->1089, bt: 10600->13368)
 Removed bonus damage to submarines (283->212)
 (pre-10.00 stats)
-
-Torpedo Launchers:
-Increased range from 500 to 700
-Increased cost (CORE: e: 2025->2700, bt: 4700->5700, ARM: e: 1701->2401, bt: 4680->5680)
 
 ARM Stingray (Floating HLT):
 Reduced cost (e: 6200->5400, m: 470->380, bt: 9670->8670)
@@ -245,13 +334,74 @@ CORE Thunderbolt (Floating HLT):
 Reduced cost (e: 6200->5400, m: 480->430, bt: 11386->10386)
 Reduced health from 3927 to 2936
 
+Sentry/Stinger (Floating AA Towers):
+Reduced footprints from 4x4 to 3x3
+
+Seaplane Platforms:
+Can build Atlas/Valkyrie
+
+CORE Amphibious Complex:
+Can produce Commando
+
+Naval Engineers:
+Can build Shark's Teeth
+
+CORE Messenger (Missile Ship):
+Missiles deal 70 damage to sea/ground (similar to Samson/Slasher)
+
 Adv. Construction Subs:
 Can capture with 1000 speed
 
-VISUALS:
---------
+ARM Conqueror:
+Changed model and removed lasers
+Cannon range 740->1300, 1 burst->2 bursts, reload time 1.2->4.5, damage 220->300 and aoe 16->64
+Increased cost (e: 12000->24000, m: 1400->2400, bt: 23747->34827)
+
+CORE Executioner:
+Changed model and removed small lasers
+Replaced big lasers with plasma cannon (range: 1300, reload time: 2.4, damage: 300, aoe: 16)
+Depthcharge cooldown from 3 to 2.4 and damage from 230 to 300
+Increased cost (e: 11000->22000, m: 1500->2300, bt: 17955->33817)
+
+CORE Shark:
+Damage from 250(default)/400(subs), 1 burst to 400(default)/170(ships), 2 bursts
+Reload time from 2 to 4
+Reduced health from 835 to 575
+Turn rate from 145 to 283
+
+ARM Piranha:
+Reload time from 2 to 1.75
+Reduced health from 895 to 535
+Velocity from 3.08 to 3.38, turn rate from 150 to 373
+// Weaker than Shark 1v1 but probably better in larger combat (Sharks will waste burst on overkill)
+
+Replaced ARM Serpent with Fibber - Sonar-Invisible Scout Sub
+Can cloak (170 cost, 370 while moving, 170 reveal range)
+
+ARM Lurker:
+Increased cost (e: 3200->3400, m: 550->750, bt: 6600->8400)
+Increased max damage from 635 to 835
+// Made it relevant unit at T2, built by Valiant.
+// Lurkers deal big damage and become stronger with Fibbers scouting.
+
+CORE Snake:
+Gains tracking torpedoes at level 5
+Reload time from 2.5 to 2 and damage from 600(default)/650(commanders) to 525(default/commanders)
+
+CORE Leviathan:
+Increased model by 27%
+Increased attack range from 690 to 800 and sonar range from 550 to 700
+Reduced sight range from 520 to 340
+Reload time from 1.5 to 5 and damage from 500(subs: 250) to 1000(subs: 500, commanders: 740)
+Has 50 auto-repair
+Increased cost (e: 12000->18410, m: 1800->2340, bt: 24750->34750)
+// Must both not feed and "tank" damage, otherwise it is worse (less DPS, more cost) version if played bad
+
+VISUALS AND REST:
+-----------------
 New models: Core Commander, Arm Metal Extractor, Immolator, Core Nano Tower (Inebriator),
-Jeffy, Peewee, Warrior, Freaker, Guardian, Punisher
+Jeffy, Peewee, Warrior, Freaker, Guardian, Punisher, Hurricane, Searcher,
+Plasma Deflectors (Alien Moho Metal Maker), Conqueror, Executioner
 
 Replaced models of Construction Hovercrafts, Skimmer, Scrubber, Snapper, Swatter, Slinger, Wombat, Nixer
 with OTA models (for scale)
@@ -260,12 +410,17 @@ Scaled model of Anaconda by 1.25
 
 Reduced Thunderbolt model by 25% (wreck model +25%)
 
-Texture changes / minor changes (visual): Consul(+script), Jethro(+script), Arm Gantry (not finished though),
-Fark, Hammer, Thud, Stumpy
+Reduced Searcher's turret turn rate from 300 to 175
 
-Changed some beam lasers to laser cannons
+Texture changes / minor changes (visual): Consul(+script), Jethro(+script), Arm Gantry (not finished though),
+Fark, Hammer, Thud, Stumpy, Pelican(+script), Weasel(+script), Supporter, Arm Nano Tower, Bladewing, Krow,
+Shiva(+script), Marauder, Muskrat, Core Fusion(lups), Core Mines(1-3), Arm/Core Eyes, Wolverine
+
+Changed some beam lasers to laser cannons and tweaked velocities
 
 Changed footprints: Core Vehicle Plant, Guardian, Punisher, Jammer, Seer
 
+Merged lboats and hvyboats armor classes into ships class
+Added plants armor class
+
 To fix:
-Last passenger does not survive if Intruder is D-Gunned.

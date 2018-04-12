@@ -43,6 +43,7 @@ return {
 		turnrate = 240,	
 		--end move
 		customparams = {
+			tooltipWeapon = "Torpedo",
 			techlevel = 2,
 		},
 		featuredefs = {

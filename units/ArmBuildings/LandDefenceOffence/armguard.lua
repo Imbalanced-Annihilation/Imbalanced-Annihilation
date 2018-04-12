@@ -37,6 +37,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
+			tooltipWeapon = "Plasma",
 			removewait = true,
 		},
 		featuredefs = {
@@ -130,7 +131,7 @@ return {
 				impulsefactor = 0.5,
 				name = "PlasmaCannon",
 				noselfdamage = true,
-				range = 1220,
+				range = 1320,
 				reloadtime = 2.925,
 				soundhit = "xplomed2",
 				soundhitwet = "splsmed",
@@ -145,13 +146,10 @@ return {
 					default = 250,
 					fighters = 90,
 					subs = 90,
-					lboats = 630,
-					hvyboats = 630,
+					ships = 550,
 					vtol = 90,
 				},
 			},
-				
-				
 			plasma_high = {
 				accuracy = 75,
 				areaofeffect = 192,
@@ -182,8 +180,7 @@ return {
 					default = 550,
 					subs = 90,
 					fighters = 90,
-					lboats = 1100,
-					hvyboats = 1100,
+					ships = 1100,
 					vtol = 90,
 				},
 			},

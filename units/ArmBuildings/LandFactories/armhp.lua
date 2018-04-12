@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "armhp_aoplane.dds",
-		buildpic = "ARMHP.DDS",
+		buildpic = "ARMHP.PNG",
 		buildtime = 13890,
 		canmove = true,
 		category = "ALL NOTLAND PLANT NOTSUB NOWEAPON NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -40,12 +40,13 @@ return {
 		workertime = 200,
 		yardmap = "occccccooccccccooccccccooccccccooccccccooccccccoocccccco",
 		buildoptions = {
-			[1] = "armch",
-			[2] = "armsh",
-			[3] = "armanac",
-			[4] = "armah",
-			[5] = "armmh",
-			[6] = "armthovr",
+			"armch",
+			"armsh",
+			"armanac",
+			"armah",
+			"armmh",
+
+			"armthovr",
 		},
 		customparams = {
 			bar_buildinggrounddecalsizex = 9,

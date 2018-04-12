@@ -49,22 +49,22 @@ return {
 		turnrate = 270,	
 		--end move
 		buildoptions = {
+			"armason",
 			"armuwfus",
 			"armuwmme",
 			"armuwmmm",
-			"armfatf",
-			"armplat",
+			"armatl",
 
+			"armfatf",
 			"armsy",
 			"armasy",
-			"armshltxuw",
 			"armamsub",
-			"armason",
+			"armplat",
 
-			"armfflak",
-			"armatl",
+			"armshltxuw",
 		},
 		customparams = {
+			specialTooltip = "Can Capture with 1000 speed",
 			techlevel = 2,
 			area_mex_def = "armuwmme",
 		},

@@ -4,7 +4,7 @@ return {
 		brakerate = 0.564,
 		buildcostenergy = 2600,
 		buildcostmetal = 260,
-		buildpic = "ARMAMPH.DDS",
+		buildpic = "ARMAMPH.PNG",
 		buildtime = 5182,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSHIP NOTAIR NOTSUB SURFACE PHIB",
@@ -112,7 +112,7 @@ return {
 			armamph_laser = {
 				areaofeffect = 8,
 				avoidfeature = false,
-				beamtime = 0.1,
+				--beamtime = 0.1,
 				corethickness = 0.175,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -131,13 +131,13 @@ return {
 				soundhitdry = "",
 				soundhitwet = "sizzle",
 				soundhitwetvolume = 0.5,
-				soundstart = "lasrfir3",
+				soundstart = "lasrlit1",
 				soundtrigger = 1,
 				targetmoveerror = 0.3,
 				thickness = 2,
 				turret = true,
-				weapontype = "BeamLaser",
-				weaponvelocity = 500,
+				weapontype = "LaserCannon",
+				weaponvelocity = 700,
 				damage = {
 					bombers = 15,
 					default = 80,
@@ -187,7 +187,7 @@ return {
 				def = "ARMAMPH_LASER",
 				onlytargetcategory = "NOTSUB",
 			},
-			[3] = {
+			[2] = {
 				badtargetcategory = "NOTAIR",
 				def = "ARMAMPH_ROCKET",
 				onlytargetcategory = "VTOL",

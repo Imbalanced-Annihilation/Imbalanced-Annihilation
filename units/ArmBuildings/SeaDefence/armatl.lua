@@ -6,7 +6,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 8500,
 		buildcostmetal = 1000,
-		buildpic = "ARMATL.DDS",
+		buildpic = "ARMATL.PNG",
 		buildtime = 9262,
 		canrepeat = false,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -30,6 +30,7 @@ return {
 		waterline = 30,
 		yardmap = "oooooooooooooooo",
 		customparams = {
+			tooltipWeapon = "Adv. Torpedo",
 			techlevel = 2,
 			removewait = true,
 		},

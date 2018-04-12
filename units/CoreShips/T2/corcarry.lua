@@ -58,6 +58,7 @@ return {
 		waterline = 0,
 		workertime = 1000,
 		customparams = {
+			tooltipRadar = true,
 			techlevel = 2,
 		},
 		featuredefs = {

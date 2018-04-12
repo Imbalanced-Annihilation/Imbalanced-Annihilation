@@ -7,7 +7,7 @@ return {
 		builddistance = 136,
 		builder = true,
 		shownanospray = false,
-		buildpic = "ARMACV.DDS",
+		buildpic = "ARMACV.PNG",
 		buildtime = 12397,
 		canmove = true,
 		category = "ALL TANK MOBILE NOTSUB NOWEAPON NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -48,38 +48,38 @@ return {
 		turnrate = 399,
 		workertime = 250,
 		buildoptions = {
+			"armarad",
 			"armfus",
-			"armckfus",
-			"armafus",
-			"armageo",
-			"armgmm",
-
 			"armmoho",
 			"armmmkr",
-			"armarad",
+			"armageo",
+			
 			"armveil",
-			"armfort",
-
-			"armasp",
-			"armtarg",
-			"armsd",
-			"armgate",
-			"armamb",
-
-			"armpb",
-			"armanni",
-			"armflak",
-			"armmercury",
+			"armafus",
+			"armckfus",
 			"armemp",
-
-			"armamd",
-			"armsilo",
-			"armbrtha",
-			"armvulc",
-			"armdf",
-
+			"armgmm",
+			
+			"armsd",
+			"armplasdef",
 			"armvp",
 			"armavp",
+			"armasp",
+			
+			"armtarg",
+			"armpb",
+			"armfort",
+			"armflak",
+			"armamb",
+			
+			"armamd",
+			"armanni",
+			"armbrtha",
+			"armmercury",
+			"armsilo",
+			
+			"armvulc",
+			"armdf",
 		},
 		customparams = {
 			arm_tank = "1",

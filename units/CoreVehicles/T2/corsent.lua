@@ -5,7 +5,7 @@ return {
 		brakerate = 0.4125,
 		buildcostenergy = 10000,
 		buildcostmetal = 470,
-		buildpic = "CORSENT.DDS",
+		buildpic = "CORSENT.PNG",
 		buildtime = 11986,
 		canmove = true,
 		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -42,6 +42,8 @@ return {
 		turninplacespeedlimit = 1.6335,
 		turnrate = 591.79999,
 		customparams = {
+			tooltipWeapon3 = "Flak",
+			weaponMain3Category = "vtol",
 			techlevel = 2,
 		},
 		featuredefs = {

@@ -1,17 +1,17 @@
 return {
 	armdecade = {
 		buildangle = 16384,
-		buildcostenergy = 1400,
-		buildcostmetal = 195,
+		buildcostenergy = 2000,
+		buildcostmetal = 235,
 		buildpic = "ARMDECADE.DDS",
-		buildtime = 2590,
+		buildtime = 4190,
 		canmove = true,
 		category = "ALL WEAPON NOTSUB SHIP NOTAIR NOTHOVER SURFACE",
 		collisionvolumeoffsets = "0 -4 -2",
 		collisionvolumescales = "24 24 67",
 		collisionvolumetype = "CylZ",
 		corpse = "DEAD",
-		description = "Fast Assault Corvette",
+		description = "Assault Corvette",
 		explodeas = "mediumexplosiongeneric",
 		floater = true,
 		footprintx = 3,
@@ -32,14 +32,16 @@ return {
 		--move
 		acceleration = 3.15/105,
 		brakerate = 3.15/15,
-		maxvelocity = 3.15,		
+		maxvelocity = 2.9,
 		turninplace = true,
 		turninplaceanglelimit = 110,
 		turninplacespeedlimit = 0.64*3.15,
 		turnrate = 405,
 		--end move
 		customparams = {
-			
+			tooltipWeapon = "EMG",
+			weaponDamageRate = "2",
+			paralyzeMultiplier = 0.4,
 		},
 		featuredefs = {
 			dead = {
@@ -118,7 +120,7 @@ return {
 			emg = {
 				areaofeffect = 8,
 				avoidfeature = false,
-				burst = 3,
+				burst = 4,
 				burstrate = 0.13,
 				craterareaofeffect = 0,
 				craterboost = 0,
@@ -129,10 +131,10 @@ return {
 				intensity = 0.7,
 				name = "flash",
 				noselfdamage = true,
-				range = 280,
+				range = 330,
 				reloadtime = 0.4,
 				rgbcolor = "1 0.95 0.4",
-				size = 1.75,
+				size = 3.0,
 				soundhitwet = "splshbig",
 				soundhitwetvolume = 0.5,
 				soundstart = "flashemg",
@@ -144,7 +146,7 @@ return {
 				weaponvelocity = 500,
 				damage = {
 					bombers = 3,
-					default = 9,
+					default = 14,
 					fighters = 3,
 					subs = 3,
 					vtol = 3,

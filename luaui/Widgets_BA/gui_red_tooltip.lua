@@ -23,9 +23,10 @@ local widgetScale = (1 + (vsx*vsy / 7500000))
 local Config = {
 	tooltip = {
 		px = -0.5,py = CanvasY-82, --default start position
-		sx = 270,sy = 82, --background size
+		--sx = 270,sy = 82, --background size
+		sx = 235,sy = 82,
 		
-		fontsize = 10.5,
+		fontsize = 12, --* increased from 10.5
 		
 		padding = 3*widgetScale,
 		color2 = {1,1,1,0.025},
@@ -37,7 +38,7 @@ local Config = {
 		
 		dragbutton = {2,3}, --middle mouse button
 		tooltip = {
-			background = "In CTRL+F11 mode: Hold \255\255\255\1middle mouse button\255\255\255\255 to drag this element.",
+			background = "In CTRL+F11 mode:\nHold \255\255\255\1middle mouse button\255\255\255\255 to drag this element.",
 		},
 		unitCounterEnabled = false,
 	},
@@ -140,22 +141,15 @@ local function createtooltip(r)
 	local text = {"text",
 		px=r.px+r.margin,py=r.py+(r.margin/1.5),
 		fontsize=r.fontsize,
-		color={1,1,1,0.3},
+		color={1,0,0,0.3},
 		caption="",
 		options="o",
 		
 		onupdate=function(self)
-			local unitcount = sGetSelectedUnitsCount()
-			if (unitcount ~= 0) then
-				self.caption = "Selected units: "..unitcount.."\n"
-			else
-				self.caption = "\n"
-			end
-		
 			if (self._mouseoverself) then
-				self.caption = self.caption..r.tooltip.background
+				self.caption = ""..r.tooltip.background
 			else
-				self.caption = self.caption..(getEditedCurrentTooltip() or sGetCurrentTooltip()) 
+				self.caption = WG.GetPointedObjectInfo() or WG.GetUnitSelectionInfo() or WG.GetGroundInfo()
 			end
 		end
 	}
@@ -163,7 +157,7 @@ local function createtooltip(r)
 	local unitcounter = {"text",
 		px=r.sx-(r.margin/2),py=r.py+(r.margin/2),
 		fontsize=r.fontsize/1.3,
-		color={1,1,1,0.2},
+		color={1,0,0,0.2},
 		caption="",
 		options="r",
 		
@@ -287,7 +281,6 @@ function widget:Update()
 end
 
 function widget:GameFrame(n)
-
 	-- get total unit count
 	if n % 120 == 0 then
 		totalUnits = 0

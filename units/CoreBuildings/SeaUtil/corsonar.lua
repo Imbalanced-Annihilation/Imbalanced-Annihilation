@@ -6,7 +6,7 @@ return {
 		buildangle = 8192,
 		buildcostenergy = 450,
 		buildcostmetal = 20,
-		buildpic = "CORSONAR.DDS",
+		buildpic = "CORSONAR.PNG",
 		buildtime = 900,
 		canattack = false,
 		canrepeat = false,
@@ -36,6 +36,8 @@ return {
 		sonardistance = 1200,
 		yardmap = "oooo",
 		customparams = {
+			tooltipSight = true,
+			tooltipSonar = true,
 			removewait = true,
 			removestop = true,
 		},

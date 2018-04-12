@@ -44,6 +44,7 @@ return {
 		turninplacespeedlimit = 1.00188,
 		turnrate = 151*0.8,
 		customparams = {
+			tooltipWeapon = "Annihilator",
 			arm_tank = "1",
 			techlevel = 2,
 			--ANIMATION DATA

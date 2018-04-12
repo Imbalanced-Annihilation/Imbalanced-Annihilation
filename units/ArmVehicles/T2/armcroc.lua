@@ -2,11 +2,10 @@ return {
 	armcroc = {
 		acceleration = 0.0528,
 		activatewhenbuilt = true,
-
 		brakerate = 0.0627,
 		buildcostenergy = 12000,
 		buildcostmetal = 500,
-		buildpic = "ARMCROC.DDS",
+		buildpic = "ARMCROC.PNG",
 		buildtime = 13367,
 		canmove = true,
 		category = "ALL TANK MOBILE WEAPON NOTSUB NOTSHIP NOTAIR NOTHOVER SURFACE CANBEUW",
@@ -45,6 +44,7 @@ return {
 		turninplacespeedlimit = 1.32,
 		turnrate = 433,
 		customparams = {
+			tooltipWeapon = "Plasma",
 			arm_tank = "1",
 			techlevel = 2,
 			--ANIMATION DATA

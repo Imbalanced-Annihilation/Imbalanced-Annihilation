@@ -45,6 +45,7 @@ return {
 		turnrate = 487,
 		script = "BASICTANKSCRIPT.LUA",
 		customparams = {
+			tooltipWeapon = "Plasma",
 			techlevel = 2,
 			--ANIMATION DATA
 				--PIECENAMES HERE

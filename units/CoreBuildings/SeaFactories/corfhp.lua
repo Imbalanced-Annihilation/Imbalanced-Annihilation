@@ -35,13 +35,14 @@ return {
 		workertime = 200,
 		yardmap = "wCCCCCCwwCCCCCCwwCCCCCCwwCCCCCCwwCCCCCCwwCCCCCCwwCCCCCCw",
 		buildoptions = {
-			[1] = "corch",
-			[2] = "corsh",
-			[3] = "corsnap",
-			[4] = "corah",
-			[5] = "cormh",
-			[6] = "corhal",
-			[7] = "corthovr",
+			"corch",
+			"corsh",
+			"corsnap",
+			"corah",
+			"cormh",
+
+			"corthovr",
+			"corhal",
 		},
 		customparams = {
 			

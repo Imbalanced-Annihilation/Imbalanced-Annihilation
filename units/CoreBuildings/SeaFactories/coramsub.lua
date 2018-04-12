@@ -18,7 +18,7 @@ return {
 		collisionvolumescales = "115 36 112",
 		collisionvolumetype = "Box",
 		corpse = "DEAD",
-		description = "Produces Amphibious/Underwater Units",
+		description = "Produces Amphibious Underwater Units",
 		energystorage = 160,
 		explodeas = "largeBuildingExplosionGeneric",
 		footprintx = 8,
@@ -41,15 +41,14 @@ return {
 		workertime = 150,
 		yardmap = "oooooooooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCooCCCCCCo",
 		buildoptions = {
-			[1] = "cormuskrat",
-			[2] = "corgarp",
-			[3] = "corseal",
-			[4] = "corparrow",
-			[5] = "corcrash",
-			[6] = "coraak",
-			[7] = "cordecom",
-			[8] = "corintr",
-			-- [9] = "corsub",
+			"cormuskrat",
+			"coramph",
+			"corseal",
+			"corcrash",
+			"coraak",
+			
+			"cordecom",
+			"cormando",
 		},
 		customparams = {
 			

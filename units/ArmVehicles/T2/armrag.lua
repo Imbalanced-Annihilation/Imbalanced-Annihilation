@@ -13,7 +13,7 @@ return {
 		collisionvolumescales = "43 23 43",
 		collisionvolumetype = "CylY",
 		corpse = "DEAD",
-		description = "Very Heavy Gauss Tank (Piercing Weapon)",
+		description = "Very Heavy Gauss Tank",
 		energymake = 0.8,
 		energyuse = 0.8,
 		explodeas = "penetrator",
@@ -42,6 +42,7 @@ return {
 		turninplacespeedlimit = 1.6104,
 		turnrate = 400,
 		customparams = {
+			tooltipWeapon = "Heavy Gauss",
 			arm_tank = "1",
 			techlevel = 2,
 		},

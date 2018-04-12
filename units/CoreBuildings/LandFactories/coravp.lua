@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "coravp_aoplane.dds",
-		buildpic = "CORAVP.DDS",
+		buildpic = "CORAVP.PNG",
 		buildtime = 18492,
 		canmove = true,
 		category = "ALL PLANT NOTLAND NOWEAPON NOTSUB NOTSHIP NOTAIR NOTHOVER SURFACE",

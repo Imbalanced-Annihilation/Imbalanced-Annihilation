@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corfus_aoplane.dds",
-		buildpic = "CORFUS.DDS",
+		buildpic = "CORFUS.PNG",
 		buildtime = 75424,
 		canrepeat = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -36,6 +36,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
+			tooltipEnergy = true,
 			techlevel = 2,
 			removewait = true,
 			removestop = true,

@@ -37,6 +37,8 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
+			tooltipWeapon = "AA Missiles",
+			weaponMainCategory = "vtol",
 			removewait = true,
 		},
 		featuredefs = {

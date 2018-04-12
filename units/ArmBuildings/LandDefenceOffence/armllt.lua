@@ -37,6 +37,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
+			tooltipWeapon = "Laser",
 			removewait = true,
 		},
 		featuredefs = {

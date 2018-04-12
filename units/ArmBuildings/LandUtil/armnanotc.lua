@@ -43,7 +43,8 @@ return {
 		useBuildingGroundDecal = true,
 		workertime = 200,
 		customparams = {
-
+			notTransportedByOthers = true,
+			unloadedFlatGround = true,
 		},
 		sfxtypes = { 
  			pieceExplosionGenerators = { 

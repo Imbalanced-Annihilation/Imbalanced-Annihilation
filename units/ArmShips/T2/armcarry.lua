@@ -59,6 +59,7 @@ return {
 		turnrate = 120,
 		--end move
 		customparams = {
+			tooltipRadar = true,
 			techlevel = 2,
 		},
 		featuredefs = {

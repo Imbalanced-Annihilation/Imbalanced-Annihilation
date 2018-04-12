@@ -12,7 +12,7 @@ return {
 		collisionvolumescales = "96 84 96",
 		collisionvolumetype = "CylY",
 		corpse = "DEAD",
-		description = "(barely) Mobile Heavy Turret",
+		description = "Barely Mobile Heavy Turret",
 		energymake = 35,
 		energystorage = 350,
 		explodeas = "juggernaut",

@@ -28,7 +28,7 @@ return {
 		maxwaterdepth = 22,
 		mincloakdistance = 80,
 		movementclass = "KBOT2",
-		name = "Sharpshooter",
+		name = "Shooter",
 		nochasecategory = "VTOL",
 		objectname = "ARMSNIPE",
 		selfdestructas = "mediumExplosionGenericSelfd",
@@ -38,6 +38,8 @@ return {
 		turnrate = 1338,
 		upright = true,
 		customparams = {
+			tooltipWeapon = "Annihilator",
+			specialTooltip = "Can Cloak",
 			techlevel = 2,
 		},
 		featuredefs = {

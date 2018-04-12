@@ -17,7 +17,7 @@ return {
 		collisionvolumescales = "32 58 32",
 		collisionvolumetype = "CylY",
 		corpse = "DEAD",
-		description = "Anti-air Tower",
+		description = "Anti-Air Tower",
 		explodeas = "mediumBuildingExplosionGeneric",
 		footprintx = 3,
 		footprintz = 3,
@@ -36,6 +36,8 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
+			tooltipWeapon = "AA Missiles",
+			weaponMainCategory = "vtol",
 			removewait = true,
 		},
 		featuredefs = {

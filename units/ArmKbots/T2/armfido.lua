@@ -4,7 +4,7 @@ return {
 		brakerate = 1.125,
 		buildcostenergy = 5600,
 		buildcostmetal = 270,
-		buildpic = "ARMFIDO.DDS",
+		buildpic = "ARMFIDO.PNG",
 		buildtime = 6232,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -37,6 +37,7 @@ return {
 		turninplacespeedlimit = 1.518,
 		turnrate = 990,
 		customparams = {
+			tooltipWeapon = "Plasma",
 			onoffname = "gauss",
 			techlevel = 2,
 		},

@@ -39,20 +39,18 @@ return {
 		yardmap = "wCCCCCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCCCCCw",
 		buildoptions = {
 			"armacsub",
-			"armmls",
-			-- "armanac",
 			"armsubk",
-			"armserp",
 			"armaas",
 			"armcrus",
-			-- "armlun",
-			"armbats",
-			-- "armmh",
-			"armmship",
-			"armepoch",
 			"armcarry",
-			-- "armthovr",
+
+			"armmls",
+			"armscram",
+			"armmship",
+			"armbats",
 			"armsjam",
+
+			"armepoch",
 		},
 		customparams = {
 			bar_collisionvolumescales = "160 60 160",

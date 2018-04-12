@@ -31,6 +31,9 @@ return {
 		turnrate = 900,
 		blocking = false,
 		customparams = {
+			tooltipWeapon = "Adv. Missiles",
+			weaponMainCategory = "vtol",
+			weaponDamageRate = "2",
 			wingsurface = 0.40,
 			techlevel = 2,
 		},

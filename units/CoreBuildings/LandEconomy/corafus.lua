@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 9,
 		buildinggrounddecalsizey = 9,
 		buildinggrounddecaltype = "corafus_aoplane.dds",
-		buildpic = "CORAFUS.DDS",
+		buildpic = "CORCKFUS.PNG",
 		buildtime = 329243,
 		canrepeat = false,
 		category = "ALL NOTSUB NOWEAPON SPECIAL NOTAIR NOTHOVER SURFACE",
@@ -38,6 +38,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooooooooooooooooooooooooooooooooooo",
 		customparams = {
+			tooltipEnergyAndStorage = true,
 			techlevel = 2,
 			removewait = true,
 			removestop = true,

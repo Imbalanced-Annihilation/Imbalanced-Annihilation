@@ -12,7 +12,7 @@ return {
 		collisionvolumescales = "26.637012481689 28.637012481689 17.637012481689",
 		collisionvolumetype = "box",
 		corpse = "DEAD",
-		description = "Stealthy Bomber Kbot (Unobstructed Vision)",
+		description = "Stealthy Bomber Kbot",
 		energymake = 0.6,
 		energyuse = 0.6,
 		explodeas = "smallExplosionGeneric",
@@ -37,7 +37,8 @@ return {
 		turnrate = 1106,
 		upright = true,
 		customparams = {
-			description_long = "",  
+			tooltipWeapon = "Bombs",
+			tooltipSight = true,
 		},
 		featuredefs = {
 			dead = {

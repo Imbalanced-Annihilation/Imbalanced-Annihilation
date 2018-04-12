@@ -44,7 +44,8 @@ return {
 		turninplaceanglelimit = 110,
 		turninplacespeedlimit = 1.64802,
 		turnrate = 701.79999,
-        customparams = {
+		customparams = {
+			tooltipWeapon = "Gauss",
 			arm_tank = "1",
 			techlevel = 2,
 			--ANIMATION DATA

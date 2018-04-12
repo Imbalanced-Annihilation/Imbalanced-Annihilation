@@ -5,7 +5,7 @@ return {
 		brakerate = 0.036,
 		buildcostenergy = 1300,
 		buildcostmetal = 90,
-		buildpic = "CORVRAD.DDS",
+		buildpic = "CORVRAD.PNG",
 		buildtime = 4223,
 		canattack = false,
 		canmove = true,
@@ -14,7 +14,7 @@ return {
 		collisionvolumescales = "24 18 29",
 		collisionvolumetype = "box",
 		corpse = "dead",
-		description = "Radar Vehicle (2200 Radius, Rough-Terrain)",
+		description = "Radar Vehicle",
 		energymake = 8,
 		energyuse = 20,
 		explodeas = "smallexplosiongeneric",
@@ -43,6 +43,7 @@ return {
 		turninplacespeedlimit = 0.825,
 		turnrate = 210,
 		customparams = {
+			tooltipRadar = true,
 			techlevel = 2,
 		},
 		featuredefs = {

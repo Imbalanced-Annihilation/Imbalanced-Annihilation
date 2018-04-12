@@ -34,6 +34,7 @@ return {
 		turnrate = 450,
 		blocking = false,
 		customparams = {
+			tooltipWeapon = "Adv. Air Bombs",
 			wingsurface = 0.4,
 			techlevel = 2,
 		},
@@ -69,7 +70,7 @@ return {
 			armadvbomb = {
 				areaofeffect = 168,
 				avoidfeature = false,
-				burst = 5,
+				burst = 7,
 				burstrate = 0.2,
 				collidefriendly = false,
 				commandfire = false,
@@ -94,7 +95,7 @@ return {
 				weapontype = "AircraftBomb",
 				damage = {
 					antibomber = 100,
-					default = 266,
+					default = 250,
 					l1bombers = 5,
 					l1subs = 5,
 				},

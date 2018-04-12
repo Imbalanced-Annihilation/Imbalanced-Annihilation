@@ -55,9 +55,11 @@ return {
 
 			"corjamt",
 			"cormaw",
-			"corroach",
 		},
 		customparams = {
+			tooltipWeapon = "Blaster",
+			specialTooltip = "Amphibious",
+			paratrooper = true,
 			techlevel = 2,
 		},
 		sfxtypes = { 

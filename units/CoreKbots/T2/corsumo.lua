@@ -37,6 +37,7 @@ return {
 		turninplacespeedlimit = 0.495,
 		turnrate = 320,
 		customparams = {
+			tooltipWeapon = "Heavy Laser",
 			techlevel = 2,
 			paralyzemultiplier = 0.5,
 		},

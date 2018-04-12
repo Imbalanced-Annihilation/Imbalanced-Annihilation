@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 4,
 		buildinggrounddecalsizey = 4,
 		buildinggrounddecaltype = "corarad_aoplane.dds",
-		buildpic = "CORARAD.DDS",
+		buildpic = "CORARAD.PNG",
 		buildtime = 11960,
 		canattack = false,
 		canrepeat = false,
@@ -43,6 +43,8 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
+			tooltipSight = true,
+			tooltipRadar = true,
 			bar_collisionvolumeoffsets = "0 40 0",
 			bar_collisionvolumescales = "35 98 35",
 			techlevel = 2,

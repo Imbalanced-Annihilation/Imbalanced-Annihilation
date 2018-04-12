@@ -33,7 +33,7 @@ Use 'ShowTooltip' to directly show a tooltip, the name you give should be unique
 ------------------------------------------------------------------------------------
 
 local defaultDelay = 0.4
-local usedFontSize = 13
+local usedFontSize = 16 --* increased from 13
 local xOffset = 32
 local yOffset = -32-usedFontSize
 
@@ -175,7 +175,8 @@ function drawTooltip(name, x, y)
 	
 	-- draw background
 	local cornersize = 0
-	glColor(0.8,0.8,0.8,0.8)
+	--glColor(0.8,0.8,0.8,0.8)
+	glColor(0.7,0.7,0.7,0.7)
 	RectRound(posX-paddingW+cornersize, posY-maxHeight-paddingH+cornersize, posX+maxWidth+paddingW-cornersize, posY+paddingH-cornersize, 5*widgetScale)
 	cornersize = 1.75*widgetScale
 	glColor(0,0,0,0.3)

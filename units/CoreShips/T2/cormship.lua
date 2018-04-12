@@ -115,11 +115,11 @@ return {
 			armship_missile = {
 				areaofeffect = 48,
 				avoidfeature = false,
-				canattackground = false,
+				--canattackground = false,
 				craterareaofeffect = 0,
 				craterboost = 0,
 				cratermult = 0,
-				cegTag = "missiletrailaa",
+				--cegTag = "missiletrailaa",
 				explosiongenerator = "custom:genericshellexplosion-medium-air",
 				firestarter = 70,
 				flighttime = 1.75,
@@ -151,6 +151,7 @@ return {
 					bombers = 138,
 					fighters = 138,
 					vtol = 138,
+					default = 50,
 				},
 				customparams = {
 					light_skip = true,		-- used by light_effects widget
@@ -215,8 +216,9 @@ return {
 				onlytargetcategory = "SURFACE",
 			},
 			[3] = {
+				badtargetcategory = "NOTAIR",
 				def = "ARMSHIP_MISSILE",
-				onlytargetcategory = "VTOL",
+				onlytargetcategory = "NOTSUB",
 			},
 		},
 	},

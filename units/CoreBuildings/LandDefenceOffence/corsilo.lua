@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 10,
 		buildinggrounddecalsizey = 10,
 		buildinggrounddecaltype = "corsilo_aoplane.dds",
-		buildpic = "CORSILO.DDS",
+		buildpic = "CORSILO.PNG",
 		buildtime = 181243,
 		category = "ALL NOTLAND WEAPON NOTSUB NOTSHIP NOTAIR NOTHOVER SURFACE",
 		collisionvolumeoffsets = "0 18 -2",
@@ -35,6 +35,8 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
+			specialTooltip = "Up to 11500 Damage in 1920 AoE",
+			specialTooltip = "180 Stockpile Time",
 			techlevel = 2,
 			removewait = true,
 		},

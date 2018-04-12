@@ -13,7 +13,7 @@ return {
 		collisionvolumescales = "28 37 14",
 		collisionvolumetype = "box",
 		corpse = "DEAD",
-		description = "Skirmish Kbot (Fast Learning, Auto-Repair)",
+		description = "Skirmish Kbot",
 		energymake = 0.4,
 		energyuse = 0.4,
 		explodeas = "mediumExplosionGeneric",
@@ -37,6 +37,8 @@ return {
 		turnrate = 1118,
 		upright = true,
 		customparams = {
+			tooltipWeapon = "Gauss",
+			specialTooltip = "Fast Learning, 50 Auto-Repair",
 			techlevel = 2,
 		},
 		featuredefs = {

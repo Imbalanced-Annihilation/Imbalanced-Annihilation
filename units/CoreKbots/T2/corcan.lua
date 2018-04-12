@@ -4,7 +4,7 @@ return {
 		brakerate = 0.564,
 		buildcostenergy = 9500,
 		buildcostmetal = 550,
-		buildpic = "CORCAN.DDS",
+		buildpic = "CORCAN.PNG",
 		buildtime = 11734,
 		canmove = true,
 		category = "KBOT MOBILE WEAPON ALL NOTSUB NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -36,6 +36,7 @@ return {
 		turnrate = 970,
 		upright = true,
 		customparams = {
+			tooltipWeapon = "Heavy Laser",
 			techlevel = 2,
 		},
 		featuredefs = {

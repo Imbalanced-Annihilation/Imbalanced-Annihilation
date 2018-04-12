@@ -3,7 +3,7 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, turret, flare;
+piece  base, turret, flare, rbwheel, lbwheel, rfwheel1, lfwheel1, rfwheel2, lfwheel2;
 
 static-var  restore_delay;
 
@@ -63,6 +63,26 @@ SetMaxReloadTime(Func_Var_1)
 {
 	restore_delay = Func_Var_1 * 2;
 	return (0);
+}
+
+StartMoving()
+{
+	spin rbwheel around x-axis speed <400.000000> accelerate <200.000000>;
+	spin lbwheel around x-axis speed <400.000000> accelerate <200.000000>;
+	spin rfwheel1 around x-axis speed <600.000000> accelerate <200.000000>;
+	spin lfwheel1 around x-axis speed <600.000000> accelerate <200.000000>;
+	spin rfwheel2 around x-axis speed <600.000000> accelerate <200.000000>;
+	spin lfwheel2 around x-axis speed <600.000000> accelerate <200.000000>;
+}
+
+StopMoving()
+{
+	stop-spin rbwheel around x-axis;
+	stop-spin lbwheel around x-axis;
+	stop-spin rfwheel1 around x-axis;
+	stop-spin lfwheel1 around x-axis;
+	stop-spin rfwheel2 around x-axis;
+	stop-spin lfwheel2 around x-axis;
 }
 
 RestoreAfterDelay()

@@ -9,7 +9,7 @@ return {
 		buildinggrounddecalsizex = 8,
 		buildinggrounddecalsizey = 8,
 		buildinggrounddecaltype = "corsolar_aoplane.dds",
-		buildpic = "CORSOLAR.DDS",
+		buildpic = "CORSOLAR.PNG",
 		buildtime = 2800,
 		canrepeat = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -39,6 +39,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooo ooooo ooooo ooooo ooooo",
 		customparams = {
+			tooltipEnergy = true,
 			removewait = true,
 			removestop = true,
 		},

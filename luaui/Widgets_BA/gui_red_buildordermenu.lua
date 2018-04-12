@@ -1,14 +1,16 @@
 function widget:GetInfo()
 	return {
-	version   = "9.1",
-	name      = "Red Build/Order Menu",
-	desc      = "Requires Red UI Framework",
-	author    = "Regret, modified by CommonPlayer",
-	date      = "29 may 2015", --modified by CommonPlayer, Oct 2016
-	license   = "GNU GPL, v2 or later",
-	layer     = 0,
-	enabled   = true, --enabled by default
-	handler   = true, --can use widgetHandler:x()
+		version   = "9.1",
+		name      = "Red Build/Order Menu",
+		desc      = "Requires Red UI Framework",
+		author    = "Regret, modified by CommonPlayer",
+		date      = "29 may 2015",
+			--modified by CommonPlayer, Oct 2016
+			--modified by Krogoth, 2018
+		license   = "GNU GPL, v2 or later",
+		layer     = 0,
+		enabled   = true, --enabled by default
+		handler   = true, --can use widgetHandler:x()
 	}
 end
 
@@ -39,7 +41,7 @@ local CanvasX,CanvasY = 1272,734 --resolution in which the widget was made (for 
 local playSounds = true
 local iconScaling = true
 local highlightscale = true
-local drawPrice = true
+local drawPrice = false --* from true
 local drawTooltip = true
 local drawBigTooltip = false
 local largePrice = true
@@ -48,6 +50,10 @@ local oldUnitpics = false
 
 local vsx, vsy = gl.GetViewSizes()
 local widgetScale = (1 + (vsx*vsy / 7500000))
+
+local BuildButtonHighlightedTexture = "LuaUI/Images/build_button_highlight.png"
+local BuildButtonHeldTexture = "LuaUI/Images/build_button_held.png"
+local BuildButtonHeldTexture2 = "LuaUI/Images/build_button_held2.png"
 
 local Config = {
 	buildmenu = {
@@ -113,7 +119,6 @@ local Config = {
 		},
 	},
 }
-
 
 function widget:ViewResize(newX,newY)
 	vsx, vsy = gl.GetViewSizes()
@@ -243,7 +248,6 @@ function wrap(str, limit)
 end
 
 local function CreateGrid(r)
-
 	local background2 = {"rectanglerounded",
 		px=r.px+r.padding,py=r.py+r.padding,
 		sx=(r.isx*r.ix+r.ispreadx*(r.ix-1) +r.margin*2) -r.padding -r.padding,
@@ -273,36 +277,7 @@ local function CreateGrid(r)
 			background2.sy = self.sy - self.padding - self.padding
 		end,
 	}
-	
-	local selecthighlight = {"rectanglerounded",
-		roundedsize = math.floor(r.isy*r.roundedPercentage),
-		px=0,py=0,
-		sx=r.isx,sy=r.isy,
-		iconscale=(iconScaling and ((not highlightscale and r.menuname == "buildmenu") or r.menuname ~= "buildmenu") and r.iconscale or 1),
-		color={0.85,0.65,0,0.25},
-		border={0.8,0,0,0},
-		glone=0.12,
-		texture = "LuaUI/Images/button-pushed.dds",
-		texturecolor={1,0,0,0.15},
 		
-		active=false,
-		onupdate=function(self)
-			self.active = false
-		end,
-	}
-	
-	local mouseoverhighlight = Copy(selecthighlight,true)
-	mouseoverhighlight.color={1,1,1,0.08}
-	mouseoverhighlight.border={1,1,1,0}
-	mouseoverhighlight.texture = "LuaUI/Images/button-highlight.dds"
-	mouseoverhighlight.texturecolor={1,1,1,0.08}
-	
-	local heldhighlight = Copy(selecthighlight,true)
-	heldhighlight.color={1,0.75,0,0.06}
-	heldhighlight.border={1,1,0,0}
-	heldhighlight.texture = "LuaUI/Images/button-pushed.dds"
-	heldhighlight.texturecolor={1,0.75,0,0.06}
-	
 	local icon = {"rectangle",
 		px=0,py=0,
 		sx=r.isx,sy=r.isy,
@@ -318,32 +293,18 @@ local function CreateGrid(r)
 		overridecursor = true,
 		overrideclick = {3},
 		
-		mouseheld={
+		mouseheld = {
 			{1,function(mx,my,self)
-				self.iconscale=(iconScaling and self.iconhoverscale or 1)
-				--if self.texture ~= nil and string.sub(self.texture, 1, 1) == '#' then
-				--	heldhighlight.iconscale = (iconScaling and ((not highlightscale and r.menuname == "buildmenu") or r.menuname ~= "buildmenu") and self.iconhoverscale or 1)
-				--else
-				--	heldhighlight.iconscale = self.iconscale
-				--end
-				heldhighlight.iconscale = self.iconscale
-				heldhighlight.color={1,0.75,0,0.06}
-				heldhighlight.px = self.px
-				heldhighlight.py = self.py
-				heldhighlight.active = nil
+				self.resettime = nil
+				self.texture2 = BuildButtonHeldTexture
 			end},
 			{3,function(mx,my,self)
-				self.iconscale=(iconScaling and self.iconhoverscale or 1)
-				--if self.texture ~= nil and string.sub(self.texture, 1, 1) == '#' then
-				--	heldhighlight.iconscale = (iconScaling and ((not highlightscale and r.menuname == "buildmenu") or r.menuname ~= "buildmenu") and self.iconhoverscale or 1)
-				--else
-				--	heldhighlight.iconscale = self.iconscale
-				--end
-				heldhighlight.iconscale = self.iconscale
-				heldhighlight.color={1,0.2,0,0.06}
-				heldhighlight.px = self.px
-				heldhighlight.py = self.py
-				heldhighlight.active = nil
+				self.resettime = nil
+				if self.rightclick then
+					self.texture2 = BuildButtonHeldTexture2
+				else
+					self.texture2 = BuildButtonHeldTexture
+				end
 			end},
 		},
 		
@@ -363,43 +324,27 @@ local function CreateGrid(r)
 			end},
 		},]]--
 		
-		mouseover=function(mx,my,self)
-			self.iconscale=(iconScaling and self.iconhoverscale or 1)
+		mouseover = function(mx,my,self)
+			self.resettime = nil
+			self.texture2 = BuildButtonHighlightedTexture
 			--if self.texture ~= nil and string.sub(self.texture, 1, 1) == '#' then
 			--	mouseoverhighlight.iconscale = (iconScaling and ((not highlightscale and r.menuname == "buildmenu") or r.menuname ~= "buildmenu") and self.iconhoverscale or 1)
 			--else
-				mouseoverhighlight.iconscale = self.iconscale
+				--mouseoverhighlight.iconscale = self.iconscale
 			--end
-			mouseoverhighlight.px = self.px
-			mouseoverhighlight.py = self.py
-			mouseoverhighlight.active = nil
-			local tt = self.tooltip
 			if drawTooltip and WG['tooltip'] ~= nil and r.menuname == "buildmenu" then
 				if self.texture ~= nil and string.sub(self.texture, 1, 1) == '#' then
-					local udefid =  tonumber(string.sub(self.texture, 2))
-					local text = "\255\215\255\215"..UnitDefs[udefid].humanName.."\n\255\240\240\240"
-					if drawBigTooltip and UnitDefs[udefid].customParams.description_long ~= nil then
-						local lines = wrap(UnitDefs[udefid].customParams.description_long, 58)
-						local description = ''
-						local newline = ''
-						for i, line in ipairs(lines) do
-							description = description..newline..line
-							newline = '\n'
-						end
-						text = text..description
-					else
-						text = text..UnitDefs[udefid].tooltip
-					end
-					WG['tooltip'].ShowTooltip('redui_buildmenu', text)
-			 		tt = string.gsub(tt, esc("Build: "..UnitDefs[udefid].humanName.." - "..UnitDefs[udefid].tooltip).."\n", "")
+					local udefid = tonumber(string.sub(self.texture, 2))
+					local tooltip = WG.GetUnitDefStatsForTooltip(UnitDefs[udefid])
+					WG['tooltip'].ShowTooltip('redui_buildmenu', tooltip)
 				end
 			end
-			if drawPrice and tt ~= nil then
-			  tt = string.gsub(tt, "Metal cost %d*\nEnergy cost %d*\n", "")
-			end
-			SetTooltip(tt)
+			--if drawPrice and tt ~= nil then
+				--tt = string.gsub(tt, "Metal cost %d*\nEnergy cost %d*\n", "")
+			--end
+			--SetTooltip(tt)
 			if r.menuname == "ordermenu" then
-				mouseoverhighlight.texturecolor={1,1,1,0.02}
+				--mouseoverhighlight.texturecolor={1,1,1,0.02}
 			end
 			--[[
 			if r.menuname == "buildmenu" then
@@ -412,18 +357,23 @@ local function CreateGrid(r)
 			end]]--
 		end,
 		
-		onupdate=function(self)
-			local _,_,_,curcmdname = sGetActiveCommand()
-			self.iconscale= (iconScaling and self.iconnormalscale or 1)
-			--selecthighlight.iconscale = (iconScaling and ((not highlightscale and r.menuname == "buildmenu") or r.menuname ~= "buildmenu") and self.iconhoverscale or 1)
-			selecthighlight.iconscale = (iconScaling and self.iconhoverscale or 1)
-			if (curcmdname ~= nil) then
-				if (self.cmdname == curcmdname) then
-					selecthighlight.px = self.px
-					selecthighlight.py = self.py
-					selecthighlight.active = nil
-				end
+		onupdate = function(self)
+			if self.resettime then
+				self.texture2 = nil
+				self.rightclick = nil
+			else
+				self.resettime = true
 			end
+			--local _,_,_,curcmdname = sGetActiveCommand()
+			--selecthighlight.iconscale = (iconScaling and ((not highlightscale and r.menuname == "buildmenu") or r.menuname ~= "buildmenu") and self.iconhoverscale or 1)
+			--selecthighlight.iconscale = (iconScaling and self.iconhoverscale or 1)
+			--if (curcmdname ~= nil) then
+				--if (self.cmdname == curcmdname) then
+					--selecthighlight.px = self.px
+					--selecthighlight.py = self.py
+					--selecthighlight.active = nil
+				--end
+			--end
 		end,
 		
 		effects = background.effects,
@@ -496,10 +446,6 @@ local function CreateGrid(r)
 	}
 	local staterectangles = {}
 	local staterectanglesglow = {}
-	
-	New(selecthighlight)
-	New(mouseoverhighlight)
-	New(heldhighlight)
 	
 	--tooltip
 	background.mouseover = function(mx,my,self) SetTooltip(r.tooltip.background) end
@@ -581,6 +527,7 @@ local function UpdateGrid(g,cmds,ordertype)
 		icon.cmdname = cmd.name
 		icon.cmdid = cmd.id
 		icon.texture = nil
+		icon.texture2 = nil
 		if (cmd.texture) then
 			if (cmd.texture ~= "") then
 				icon.texture = cmd.texture
@@ -604,14 +551,16 @@ local function UpdateGrid(g,cmds,ordertype)
 					Spring.PlaySoundFile(sound_queue_rem, 0.75, 'ui')
 				end
 				Spring.SetActiveCommand(Spring.GetCmdDescIndex(cmd.id),3,false,true,Spring.GetModKeyState())
+				self.rightclick = true --* added for alternative held texture
 			end},
 		}
 		
 		if (ordertype == 1) then --build icons
-			if oldUnitpics and UnitDefs[cmd.id*-1] ~= nil and VFS.FileExists(oldUnitpicsDir..UnitDefs[cmd.id*-1].name..'.dds') then
-				icon.texture = oldUnitpicsDir..UnitDefs[cmd.id*-1].name..'.dds'
+			local unitDef = UnitDefs[cmd.id*-1]
+			if oldUnitpics and unitDef ~= nil and VFS.FileExists(oldUnitpicsDir..unitDef.name..'.dds') then
+				icon.texture = oldUnitpicsDir..unitDef.name..'.dds'
 			else
-				icon.texture = "#"..cmd.id*-1
+				icon.texture = "#"..cmd.id*-1				
 			end
 			if (cmd.params[1]) then
 				icon.options = "o"
@@ -662,7 +611,11 @@ local function UpdateGrid(g,cmds,ordertype)
 				end
 				
 				if not drawPrice then
-					text.caption = "\n"..shotcutCaption.."\n\n\n"
+					--text.caption = "\n"..shotcutCaption.."\n\n\n"
+					if unitDef.customParams.tooltipdecoy then
+						text.caption = orange.."\n\n\nDECOY"
+						text.options = "bs"
+					end
 				else
 					-- redui adjusts position based on text length, so adding spaces helps us putting it at the left side of the icon
 					local str = tostring(math.max(metalCost, energyCost))

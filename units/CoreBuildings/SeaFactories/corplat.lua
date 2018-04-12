@@ -34,15 +34,15 @@ return {
 		workertime = 200,
 		yardmap = "wwwwwwwwCCCCCwwCCCCCwwCCCCCwwCCCCCwwCCCCCwwwwwwww",
 		buildoptions = {
-			[1] = "corcsa",
-			[2] = "corcut",
-			[3] = "corsb",
-			[4] = "corseap",
-			[5] = "corsfig",
-			[6] = "corhunt",
+			"corcsa",
+			"corhunt",
+			"corsb",
+			"corsfig",
+			"corseap",
+
+			"corvalk",
 		},
 		customparams = {
-			
 		},
 		featuredefs = {
 			dead = {

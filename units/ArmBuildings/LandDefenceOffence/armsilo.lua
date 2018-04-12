@@ -35,6 +35,8 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooooooooooooooooooooooooooooooooooooooooooo",
 		customparams = {
+			specialTooltip = "Up to 9500 Damage in 1280 AoE",
+			specialTooltip2 = "120 Stockpile Time",
 			techlevel = 2,
 			removewait = true,
 		},

@@ -1,10 +1,10 @@
 return {
 	armsubk = {
 		activatewhenbuilt = true,
-		buildcostenergy = 0.8*10000,
+		buildcostenergy = 8000,
 		buildcostmetal = 900,
 		buildpic = "ARMSUBK.DDS",
-		buildtime = 0.75 * 1.5 * 0.8*17767,
+		buildtime = 15590,
 		canmove = true,
 		category = "ALL NOTLAND MOBILE WEAPON NOTAIR NOTHOVER CANBEUW SURFACE",
 		collisionvolumeoffsets = "0.5 0 0",
@@ -20,7 +20,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 10,
 		idletime = 900,
-		maxdamage = 895,
+		maxdamage = 535,
 		minwaterdepth = 20,
 		movementclass = "UBOAT34X4",
 		name = "Piranha",
@@ -34,15 +34,17 @@ return {
 		--move
 		brakerate =  2.80/20,
 		acceleration = 2.80/150,
-		maxvelocity = 3.08,
+		maxvelocity = 3.38,
 		turninplace = true,
 		turninplaceanglelimit = 90,
 		turninplacespeedlimit = 0.64*2.80,
-		turnrate = 150,	
+		turnrate = 373,	
 		--end move
 		upright = true,
 		waterline = 40,
 		customparams = {
+			tooltipWeapon = "Adv. Torpedo",
+			weaponMainCategory = "subs",
 			techlevel = 2,
 		},
 		featuredefs = {
@@ -131,7 +133,7 @@ return {
 				name = "AdvancedTorpedo",
 				noselfdamage = true,
 				range = 600,
-				reloadtime = 2,
+				reloadtime = 1.75,
 				soundhit = "xplodep1",
 				soundstart = "torpedo1",
 				startvelocity = 120,

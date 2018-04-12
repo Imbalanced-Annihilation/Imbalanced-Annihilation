@@ -43,6 +43,8 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
+			tooltipSight = true,
+			tooltipRadar = true,
 			bar_collisionvolumeoffsets = "0 -12 0",
 			bar_collisionvolumescales = "32 99 32",
 			removewait = true,

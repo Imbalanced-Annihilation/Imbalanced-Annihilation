@@ -5,7 +5,7 @@ return {
 		brakerate = 0.054,
 		buildcostenergy = 1200,
 		buildcostmetal = 100,
-		buildpic = "ARMMARK.DDS",
+		buildpic = "ARMMARK.PNG",
 		buildtime = 3800,
 		canattack = false,
 		canmove = true,
@@ -14,7 +14,7 @@ return {
 		collisionvolumescales = "26 24 16",
 		collisionvolumetype = "box",
 		corpse = "dead",
-		description = "Radar Kbot (2200 Radius)",
+		description = "Radar Kbot",
 		energymake = 8,
 		energyuse = 20,
 		explodeas = "smallexplosiongeneric",
@@ -38,6 +38,8 @@ return {
 		turninplacespeedlimit = 0.891,
 		turnrate = 505,
 		customparams = {
+			tooltipSight = true,
+			tooltipRadar = true,
 			techlevel = 2,
 		},
 		featuredefs = {

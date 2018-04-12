@@ -10,7 +10,7 @@ return {
 		buildinggrounddecalsizex = 6,
 		buildinggrounddecalsizey = 6,
 		buildinggrounddecaltype = "armason_aoplane.dds",
-		buildpic = "ARMASON.DDS",
+		buildpic = "ARMASON.PNG",
 		buildtime = 6152,
 		canattack = false,
 		canrepeat = false,
@@ -39,6 +39,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "yooy oooo oooo yooy",
 		customparams = {
+			tooltipSonar = true,
 			techlevel = 2,
 			removewait = true,
 			removestop = true,

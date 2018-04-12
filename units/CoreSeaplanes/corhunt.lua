@@ -35,7 +35,9 @@ return {
 		turnrate = 680,
 		blocking = false,
 		customparams = {
-			
+			tooltipSight = true,
+			tooltipRadar = true,
+			tooltipSonar = true,
 		},
 		sfxtypes = { 
  			pieceExplosionGenerators = { 

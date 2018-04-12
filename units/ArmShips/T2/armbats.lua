@@ -140,6 +140,7 @@ return {
 				damage = {
 					bombers = 65,
 					default = 300,
+					corpun = 300*0.7,
 					fighters = 65,
 					subs = 5,
 					vtol = 65,

@@ -37,6 +37,8 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "oooo",
 		customparams = {
+			tooltipWeapon = "Flak",
+			weaponMainCategory = "vtol",
 			bar_buildinggrounddecalsizex = 5,
 			bar_buildinggrounddecalsizey = 5,
 			bar_yardmap = "ooooooooo",

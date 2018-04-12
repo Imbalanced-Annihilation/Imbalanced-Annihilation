@@ -3,40 +3,11 @@
 #include "sfxtype.h"
 #include "exptype.h"
 
-piece  base, wing1, wing2, fin1, fin2, drop, emit1, emit2,
-       emit3;
+piece  base, head_weapon, droppos, Rweapon, firer1, firer2, Lweapon, firel1,
+       firel2;
 
-static-var  Static_Var_1, bMoving, statechg_DesiredState, statechg_StateChanging;
+static-var  gun, Static_Var_2;
 
-lua_BombsAway() { return 0; }
-
-FirePrimary()
-{
-	call-script lua_BombsAway();
-}
-
-
-Go()
-{
-	move wing1 to x-axis [0.000000] speed [5.000000];
-	move wing2 to x-axis [0.000000] speed [5.000000];
-	wait-for-move wing1 along x-axis;
-	wait-for-move wing2 along x-axis;
-	turn wing1 to z-axis <30.005495> speed <25.000000>;
-	turn wing2 to z-axis <-30.005495> speed <25.000000>;
-	return (0);
-	// Build by COBBLER Ver4.0 Copyright @1998 DIGITAL CONCEPT SOFTWARE (MANU@inext.fr) / http://www.annihilationcenter.com/DCS/  
-}
-
-Stop()
-{
-	turn wing1 to z-axis <0.000000> speed <25.000000>;
-	turn wing2 to z-axis <0.000000> speed <25.000000>;
-	wait-for-turn wing1 around z-axis;
-	wait-for-turn wing2 around z-axis;
-	move wing1 to x-axis [3.500000] speed [5.000000];
-	move wing2 to x-axis [-3.500000] speed [5.000000];
-}
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
@@ -65,96 +36,29 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 	}
 }
 
-InitState()
+MoveRate2()
 {
-	statechg_DesiredState = TRUE;
-	statechg_StateChanging = FALSE;
-}
-
-RequestState(requestedstate, currentstate)
-{
-	if( statechg_StateChanging )
+	if( Rand( 1, 10 ) == 1 AND ( !Static_Var_2 ) )
 	{
-		statechg_DesiredState = requestedstate;
-		return (0);
-	}
-	statechg_StateChanging = TRUE;
-	currentstate = statechg_DesiredState;
-	statechg_DesiredState = requestedstate;
-	while( statechg_DesiredState != currentstate )
-	{
-		if( statechg_DesiredState == 0 )
-		{
-			call-script Go();
-			currentstate = 0;
-		}
-		if( statechg_DesiredState == 1 )
-		{
-			call-script Stop();
-			currentstate = 1;
-		}
-	}
-	statechg_StateChanging = FALSE;
-}
-
-
-MotionControl()
-{
-	while( TRUE )
-	{
-		if( bMoving )
-		{
-			if( Static_Var_1 == 3 )
-			{
-				emit-sfx 259 from emit1;
-				emit-sfx 259 from emit2;
-				emit-sfx 259 from emit3;
-			}
-		}
-		sleep 150;
+		Static_Var_2 = 1;
+		turn base to z-axis <240.000000> speed <135.000000>;
+		wait-for-turn base around z-axis;
+		turn base to z-axis <120.000000> speed <200.000000>;
+		wait-for-turn base around z-axis;
+		turn base to z-axis <0.000000> speed <135.000000>;
+		Static_Var_2 = 0;
 	}
 }
 
 Create()
 {
-	Static_Var_1 = 0;
-	bMoving = FALSE;
-	call-script InitState();
+	gun = head_weapon;
+	Static_Var_2 = 0;
+	while( get BUILD_PERCENT_LEFT )
+	{
+		sleep 1500;
+	}
 	start-script SmokeUnit();
-	start-script MotionControl();
-	move wing1 to x-axis [3.500000] now;
-	move wing2 to x-axis [-3.500000] now;
-}
-
-
-Activate()
-{
-	start-script RequestState(0);
-}
-
-Deactivate()
-{
-	start-script RequestState(1);
-}
-
-setSFXoccupy(Func_Var_1)
-{
-	Static_Var_1 = Func_Var_1;
-}
-
-StartMoving()
-{
-	bMoving = TRUE;
-}
-
-StopMoving()
-{
-	bMoving = FALSE;
-}
-
-QueryPrimary(piecenum)
-{
-	piecenum = drop;
 }
 
 SweetSpot(piecenum)
@@ -162,41 +66,116 @@ SweetSpot(piecenum)
 	piecenum = base;
 }
 
+QueryPrimary(piecenum)
+{
+	if( gun == 1 )
+	{
+		piecenum = firer1;
+		return (0);
+	}
+	if( gun == 2 )
+	{
+		piecenum = firel1;
+		return (0);
+	}
+	if( gun == 3 )
+	{
+		piecenum = firer2;
+		return (0);
+	}
+	if( gun == 4 )
+	{
+		piecenum = firel2;
+		return (0);
+	}
+}
+
+FirePrimary()
+{
+	/*if( gun == 1 )
+	{
+		gun = droppos;
+		return (0);
+	}
+	if( gun == 2 )
+	{
+		gun = Rweapon;
+		return (0);
+	}
+	if( gun == 3 )
+	{
+		gun = firer1;
+		return (0);
+	}
+	if( gun == 4 )
+	{
+		gun = head_weapon;
+		return (0);
+	}*/
+	gun = droppos;	sleep 150;
+	gun = Rweapon;	sleep 150;
+	gun = firer1;	sleep 150;
+	gun = head_weapon;
+	return(0);
+}
+
+QuerySecondary(piecenum)
+{
+	piecenum = droppos;
+}
+
 Killed(severity, corpsetype)
 {
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		//explode base type SHATTER | NOHEATCLOUD;
-		explode drop type FALL | BITMAP2 | NOHEATCLOUD;
-		explode wing1 type FALL | BITMAP1 | NOHEATCLOUD;
-		return (corpsetype);
+		explode base type BITMAPONLY | BITMAP1;
+		explode head_weapon type BITMAPONLY | BITMAP1;
+		explode droppos type BITMAPONLY | BITMAP1;
+		explode Rweapon type BITMAPONLY | BITMAP1;
+		explode firer1 type BITMAPONLY | BITMAP1;
+		explode firer2 type BITMAPONLY | BITMAP1;
+		explode Lweapon type BITMAPONLY | BITMAP1;
+		explode firel1 type BITMAPONLY | BITMAP1;
+		explode firel2 type BITMAPONLY | BITMAP1;
+		return (0);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		//explode base type SHATTER | NOHEATCLOUD;
-		explode drop type FALL | BITMAP2 | NOHEATCLOUD;
-		explode fin1 type FALL | BITMAP3 | NOHEATCLOUD;
-		//explode fin2 type FALL | BITMAP4 | NOHEATCLOUD;
-		explode wing1 type FALL | BITMAP1 | NOHEATCLOUD;
-		return (corpsetype);
+		explode base type SHATTER | BITMAP4;
+		explode head_weapon type SHATTER | BITMAP4;
+		explode droppos type SHATTER | BITMAP4;
+		explode Rweapon type SHATTER | BITMAP4;
+		explode firer1 type SHATTER | BITMAP4;
+		explode firer2 type SHATTER | BITMAP4;
+		explode Lweapon type SHATTER | BITMAP4;
+		explode firel1 type SHATTER | BITMAP4;
+		explode firel2 type SHATTER | BITMAP4;
+		return (0);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		//explode base type SHATTER | NOHEATCLOUD;
-		explode drop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2 | NOHEATCLOUD;
-		explode fin1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3 | NOHEATCLOUD;
-		//explode fin2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-		explode wing1 type FALL | BITMAP1 | NOHEATCLOUD;
-		return (corpsetype);
+		explode base type SHATTER | BITMAP4;
+		explode head_weapon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode droppos type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Rweapon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode firer1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode firer2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode Lweapon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode firel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		explode firel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+		return (0);
 	}
 	corpsetype = 3;
-	explode base type SHATTER | NOHEATCLOUD;
-	explode drop type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2 | NOHEATCLOUD;
-	explode fin1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP3 | NOHEATCLOUD;
-	explode fin2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-	explode wing1 type FALL | BITMAP1 | NOHEATCLOUD;
-	return corpsetype;
+	explode base type SHATTER | BITMAP4;
+	explode head_weapon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode droppos type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Rweapon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode firer1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode firer2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode Lweapon type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode firel1 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
+	explode firel2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP2;
 }

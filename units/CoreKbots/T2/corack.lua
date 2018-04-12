@@ -7,7 +7,7 @@ return {
 		builddistance = 136,
 		builder = true,
 		shownanospray = false,
-		buildpic = "CORACK.DDS",
+		buildpic = "CORACK.PNG",
 		buildtime = 9709,
 		canmove = true,
 		category = "KBOT MOBILE ALL NOTSUB NOWEAPON NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -45,37 +45,37 @@ return {
 		upright = true,
 		workertime = 180,
 		buildoptions = {
-			"corfus",
-			"corgant",
-			"corageo",
-			"corbhmth",
-			"cormoho",
-
-			"cormexp",
-			"cormmkr",
 			"corarad",
+			"corfus",
+			"cormoho",
+			"cormmkr",
+			"corageo",
+			
 			"corshroud",
-			"corfort",
-
-			"corasp",
-			"cortarg",
+			"corgant",
+			"cormexp",
+			"cortoast",
+			"corbhmth",
+			
 			"corsd",
 			"corplasdef",
-			"cortoast",
-
-			"corvipe",
-			"cordoom",
-			"corflak",
-			"corscreamer",
-			"cortron",
-
-			"corfmd",
-			"corsilo",
-			"corint",
-			"corbuzz",
 			"corlab",
-
 			"coralab",
+			"corasp",
+			
+			"cortarg",
+			"corvipe",
+			"corfort",
+			"corflak",
+			"cortron",
+			
+			"corfmd",
+			"cordoom",
+			"corint",
+			"corscreamer",
+			"corsilo",
+			
+			"corbuzz",
 		},
 		customparams = {
 			techlevel = 2,

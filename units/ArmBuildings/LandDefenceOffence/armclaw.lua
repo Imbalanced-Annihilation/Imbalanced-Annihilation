@@ -40,6 +40,7 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		customparams = {
+			tooltipWeapon = "Lightning",
 			bar_collisionvolumeoffsets = "0 -24 0",
 			bar_collisionvolumescales = "30 51 30",
 			bar_collisionvolumetype = "Ell",

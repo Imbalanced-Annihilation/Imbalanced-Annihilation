@@ -39,21 +39,18 @@ return {
 		yardmap = "wCCCCCCCCCCwCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCwCCCCCCCCCCw",
 		buildoptions = {
 			"coracsub",
-			"cormls",
-			-- "corsnap",
 			"corshark",
-			"corssub",
 			"corarch",
 			"corcrus",
-			-- "corhal",
-			-- "corsok",
-			"corbats",
-			-- "cormh",
-			"cormship",
-			"corblackhy",
 			"corcarry",
-			-- "corthovr",
+
+			"cormls",
+			"corssub",
+			"cormship",
+			"corbats",
 			"corsjam",
+
+			"corblackhy",
 		},
 		customparams = {
 			bar_collisionvolumeoffsets = "0 10 -2",

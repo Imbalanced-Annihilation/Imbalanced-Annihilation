@@ -4,7 +4,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 5500,
 		buildcostmetal = 600,
-		buildpic = "CORTSHIP.DDS",
+		buildpic = "CORTSHIP.PNG",
 		buildtime = 8610,
 		canattack = false,
 		canmove = true,
@@ -31,6 +31,7 @@ return {
 		seismicsignature = 0,
 		selfdestructas = "hugeexplosiongenericSelfd",
 		sightdistance = 550,
+		minTransportMass = 2, --for armfrt/corfrt
 		transportcapacity = 40,
 		transportsize = 4,
 		transportunloadmethod = 0,

@@ -11,8 +11,6 @@ static-var  RestoreDelay, bAiming, gun;
 // Signal definitions
 #define SIG_AIM				2
 
-// BUSY indicates if corfing started fire
-
 SmokeUnit(healthpercent, sleeptime, smoketype)
 {
 	while( get BUILD_PERCENT_LEFT )

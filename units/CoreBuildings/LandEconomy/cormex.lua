@@ -11,7 +11,7 @@ return {
 		buildinggrounddecalsizey = 5,
 		buildinggrounddecaltype = "cormex_aoplane.dds",
 		buildingMask = 0,
-		buildpic = "CORMEX.DDS",
+		buildpic = "CORMEX.PNG",
 		buildtime = 1874,
 		canrepeat = false,
 		category = "ALL NOTLAND NOTSUB NOWEAPON NOTSHIP NOTAIR NOTHOVER SURFACE",
@@ -41,6 +41,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
+			tooltipMetal = true,
 			cvBuildable = true,
 			metal_extractor = 1,
 			removewait = true,

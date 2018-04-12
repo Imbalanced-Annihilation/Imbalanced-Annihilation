@@ -32,6 +32,7 @@ return {
 		sightdistance = 455,
 		turnrate = 700,
 		customparams = {
+			tooltipWeapon = "Air Torpedo",
 			wingsurface = 0.5,
 			techlevel = 2,
 		},

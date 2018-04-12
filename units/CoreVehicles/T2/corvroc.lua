@@ -41,6 +41,7 @@ return {
 		turninplacespeedlimit = 0.792,
 		turnrate = 520.29999,
 		customparams = {
+			tooltipWeapon = "Starburst Rockets",
 			techlevel = 2,
 		},
 		featuredefs = {

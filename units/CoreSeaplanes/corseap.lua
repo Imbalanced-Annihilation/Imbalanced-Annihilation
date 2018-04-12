@@ -35,7 +35,6 @@ return {
 		turnrate = 610,
 		blocking = false,
 		customparams = {
-			
 		},
 		sfxtypes = { 
  			pieceExplosionGenerators = { 

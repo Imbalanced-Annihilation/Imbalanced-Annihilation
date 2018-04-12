@@ -43,6 +43,7 @@ return {
 		usebuildinggrounddecal = true,
 		yardmap = "ooooooooo",
 		customparams = {
+			tooltipWeapon = "Laser",
 			cvBuildable = true,
 			metal_extractor = 1,
 			removewait = true,

@@ -50,6 +50,7 @@ return {
 		upright = true,
 		workertime = 50,
 		customparams = {
+			specialTooltip = "Can Cloak, EMP Self-Destruct",
 			techlevel = 2,
 		},
 		featuredefs = {

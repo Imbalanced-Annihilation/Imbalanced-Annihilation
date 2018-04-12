@@ -14,7 +14,7 @@ return {
 		collisionvolumescales = "25.5 25.5 31.0",
 		collisionvolumetype = "CylZ",
 		corpse = "DEAD",
-		description = "High-Precision Radar Vehicle (1400 Sight Radius)",
+		description = "High-Precision Radar Vehicle",
 		energymake = 8,
 		energyuse = 20,
 		explodeas = "smallexplosiongeneric",
@@ -45,6 +45,7 @@ return {
 		turninplacespeedlimit = 1.33584,
 		turnrate = 605,
 		customparams = {
+			tooltipSight = true,
 			arm_tank = "1",
 			techlevel = 2,
 		},

@@ -33,6 +33,7 @@ return {
 		usepiececollisionvolumes = 1,
 		yardmap = "ooooooooooooooooooooooooo",
 		customparams = {
+			tooltipWeapon = "Plasma",
 			techlevel = 2,
 			removewait = true,
 			canareaattack = 1,

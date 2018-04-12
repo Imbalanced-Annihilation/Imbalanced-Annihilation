@@ -32,6 +32,7 @@ return {
 		waterline = 13,
 		yardmap = "wwwwwwwww",
 		customparams = {
+			tooltipWeapon = "Torpedo",
 			removewait = true,
 		},
 		featuredefs = {

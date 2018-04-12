@@ -4,7 +4,7 @@ return {
 		brakerate = 0.055,
 		buildcostenergy = 4600,
 		buildcostmetal = 150,
-		buildpic = "CORSHAD.PNG",
+		buildpic = "CORSHAD.DDS",
 		buildtime = 5054,
 		canfly = true,
 		canmove = true,
@@ -34,9 +34,8 @@ return {
 		turnrate = 800,
 		blocking = false,
 		customparams = {
+			tooltipWeapon = "Air Bombs",			
 			wingsurface = 0.3,
-			description_long = "The Shadow is a bomber, designed for destroying buildings. Its DPS is higher than that of ARM T1 bomber. It drops bombs over the target and makes a flyby to reload ammunition. It can strike every 9 seconds. Always scout first and combine with fighters to eliminate enemy's airwall before  bombing. Click A for attack and drag your RMB to execute a carpet bombing, or use area attack command to strike targets within a circle.",
-
 		},
 		sfxtypes = { 
  			pieceExplosionGenerators = { 

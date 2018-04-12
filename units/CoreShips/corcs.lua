@@ -1,12 +1,12 @@
 return {
 	corcs = {
-		buildcostenergy = 2000,
-		buildcostmetal = 200,
+		buildcostenergy = 2140,
+		buildcostmetal = 244,
 		builddistance = 200,
 		builder = true,
 		shownanospray = false,
-		buildpic = "CORCS.DDS",
-		buildtime = 3700,
+		buildpic = "CORCS.PNG",
+		buildtime = 4470,
 		canmove = true,
 		category = "ALL NOTLAND MOBILE NOTSUB SHIP NOWEAPON NOTAIR NOTHOVER SURFACE",
 		collisionvolumeoffsets = "0 -7 0",
@@ -34,7 +34,7 @@ return {
 		sightdistance = 286,
 		terraformspeed = 1250,
 		waterline = 0,
-		workertime = 125,
+		workertime = 150,
 		--move
 		acceleration = 2.00/90,
 		brakerate = 2.00/25,
@@ -69,13 +69,11 @@ return {
 			"corplat",
 			"corfhp",
 
-			"cornanotcplat",
+			"cortl",
 			"corasy",
 			"corfdrag",
 			"corfhlt",
 			"corfrt",
-
-			"cortl",
 		},
 		customparams = {
 

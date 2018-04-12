@@ -40,6 +40,7 @@ return {
 		upright = true,
 		usebuildinggrounddecal = true,
 		customparams = {
+			tooltipWeapon = "Flamethrower",
 			removewait = true,
 		},
 		featuredefs = {

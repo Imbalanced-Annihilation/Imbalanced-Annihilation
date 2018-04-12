@@ -36,7 +36,7 @@ return {
 		turninplacespeedlimit = 1.6698,
 		turnrate = 525,
 		customparams = {
-			
+			tooltipWeapon = "Light Gauss",
 		},
 		featuredefs = {
 			dead = {

@@ -43,37 +43,38 @@ return {
 		workertime = 100,
 		blocking = false,
 		buildoptions = {
-			"armfus",
-			"armckfus",
-			"armageo",
-			"armgmm",
-			"armmoho",
-			
-			"armmmkr",
 			"armarad",
+			"armfus",
+			"armmoho",
+			"armmmkr",
+			"armageo",
+			
 			"armveil",
-			"armfort",
+			"armplat",
+			"armckfus",
+			"armemp",
+			"armgmm",
+			
+			"armsd",
+			"armplasdef",
+			"armlab",
+			"armalab",
 			"armasp",
 			
 			"armtarg",
-			"armsd",
-			"armgate",
-			"armamb",
 			"armpb",
-			
-			"armanni",
+			"armfort",
 			"armflak",
-			"armmercury",
-			"armemp",
-			"armamd",
+			"armamb",
 			
-			"armsilo",
+			"armamd",
+			"armanni",
 			"armbrtha",
+			"armmercury",
+			"armsilo",
+			
 			"armvulc",
 			"armdf",
-			"armlab",
-			
-			"armalab",
 		},
 		customparams = {
 			wingsurface = 0.25,

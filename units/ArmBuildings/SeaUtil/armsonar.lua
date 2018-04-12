@@ -36,6 +36,8 @@ return {
 		sonardistance = 1200,
 		yardmap = "oooo",
 		customparams = {
+			tooltipSight = true,
+			tooltipSonar = true,
 			removewait = true,
 			removestop = true,
 		},

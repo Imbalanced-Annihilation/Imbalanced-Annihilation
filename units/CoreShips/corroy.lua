@@ -2,10 +2,10 @@ return {
 	corroy = {
 		activatewhenbuilt = true,
 		buildangle = 16384,
-		buildcostenergy = 4800,
+		buildcostenergy = 6140,
 		buildcostmetal = 880,
-		buildpic = "CORROY.DDS",
-		buildtime = 10600,
+		buildpic = "CORROY.PNG",
+		buildtime = 13368,
 		canmove = true,
 		category = "ALL NOTLAND MOBILE WEAPON SHIP NOTSUB NOTAIR NOTHOVER SURFACE",
 		collisionvolumeoffsets = "0 -5 0",
@@ -22,7 +22,7 @@ return {
 		icontype = "sea",
 		idleautoheal = 5,
 		idletime = 1800,
-		maxdamage = 4050,
+		maxdamage = 3360,
 		minwaterdepth = 12,
 		movementclass = "BOAT44X4",
 		name = "Enforcer",
@@ -37,13 +37,13 @@ return {
 		acceleration = 1.76/120,
 		brakerate = 1.76/35,
 		turninplace = true,
-		maxvelocity = 1.76,
+		maxvelocity = 2.737,
 		turninplaceanglelimit = 140,
 		turninplacespeedlimit = 0.64*1.76,
 		turnrate = 194,
 		--end move
 		customparams = {
-
+			tooltipWeapon = "Plasma",
 		},
 		featuredefs = {
 			dead = {
@@ -117,7 +117,6 @@ return {
 		},
 		weapondefs = {
 			plasma = {
-				accuracy = 512,
 				areaofeffect = 64,
 				avoidfeature = false,
 				craterareaofeffect = 64,
@@ -131,18 +130,20 @@ return {
 				noselfdamage = true,
 				proximitypriority = -0.1,
 				range = 700,
-				reloadtime = 3.9,
+				reloadtime = 2.5,
 				soundhit = "xplomed2",
 				soundhitwet = "splssml",
 				soundhitwetvolume = 0.5,
-				soundstart = "cannhvy1",
+				--soundstart = "cannhvy1",
+				soundstart = "cannon3",
 				targetmoveerror = 0.1,
 				turret = true,
 				weapontype = "Cannon",
 				weaponvelocity = 320,
 				damage = {
 					bombers = 62,
-					default = 530,
+					default = 385,
+					corpun = 385*0.7,
 					fighters = 62,
 					vtol = 62,
 					subs = 5,
@@ -182,7 +183,6 @@ return {
 				weaponvelocity = 140,
 				damage = {
 					default = 212,
-					subs = 283,
 				},
 			},
 		},

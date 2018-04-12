@@ -1,10 +1,11 @@
 return {
 	corssub = {
 		activatewhenbuilt = true,
-		buildcostenergy = 12000,
-		buildcostmetal = 1800,
+		autoHeal = 50,
+		buildcostenergy = 18410,
+		buildcostmetal = 2340,
 		buildpic = "CORSSUB.DDS",
-		buildtime = 0.75 * 1.5 * 0.8*27500,
+		buildtime = 34750,
 		canmove = true,
 		category = "ALL MOBILE WEAPON NOTLAND NOTAIR NOTHOVER CANBEUW SURFACE",
 		collisionvolumeoffsets = "0 0 0",
@@ -29,8 +30,8 @@ return {
 		script = "CORSSUB_LUS.LUA",
 		seismicsignature = 0,
 		selfdestructas = "largeexplosiongenericSelfd-uw",
-		sightdistance = 520,
-		sonardistance = 550,
+		sightdistance = 340,
+		sonardistance = 700,
 		upright = true,
 		waterline = 45,
 				--move
@@ -43,6 +44,8 @@ return {
 		turnrate = 234,	
 		--end move		
 		customparams = {
+			tooltipWeapon = "Torpedo",
+			specialTooltip = "50 Auto-Repair",
 			techlevel = 2,
 		},
 		featuredefs = {
@@ -130,8 +133,8 @@ return {
 				model = "advtorpedo",
 				name = "AdvTorpedo",
 				noselfdamage = true,
-				range = 690,
-				reloadtime = 1.5,
+				range = 800,
+				reloadtime = 5,
 				soundhit = "xplodep1",
 				soundstart = "torpedo1",
 				startvelocity = 150,
@@ -145,8 +148,9 @@ return {
 				weapontype = "TorpedoLauncher",
 				weaponvelocity = 220,
 				damage = {
-					default = 500,
-					subs = 250,
+					default = 1000,
+					subs = 500,
+					commanders = 740,
 				},
 			},
 		},

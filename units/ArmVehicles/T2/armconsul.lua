@@ -51,8 +51,8 @@ return {
 			"armarad",
 			"armadvsol",
 			"armmex",
-			"armvp",
-			"armnanotc",
+			"armestor",
+			"armmstor",
 			
 			"armeyes",
 			"armbeamer",
@@ -61,18 +61,19 @@ return {
 			"armdl",
 
 			"armveil",
+			"armvp",
 			"armamb",			
 			"armpacko",
 			"armflak",
-			"armjeth",
 
-			"armfav",
+			"armnanotc",
+			"armpw",
 			"armcv",
 			"armfido",
+			"armjeth",
+
 			"armmav",
-			"armsptk",
-			
-			"armspy",
+			"armsptk",			
 			"armcs",
 			"armroy",
 		},

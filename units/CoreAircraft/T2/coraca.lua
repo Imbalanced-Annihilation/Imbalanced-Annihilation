@@ -43,37 +43,37 @@ return {
 		workertime = 100,
 		blocking = false,
 		buildoptions = {
-			"corfus",
-			"corageo",
-			"corbhmth",
-			"cormoho",
-			"cormexp",
-
-			"cormmkr",
 			"corarad",
+			"corfus",
+			"cormoho",
+			"cormmkr",
+			"corageo",
+			
 			"corshroud",
-			"corfort",
-			"corasp",
-
-			"cortarg",
+			"corplat",
+			"cormexp",
+			"cortoast",
+			"corbhmth",
+			
 			"corsd",
 			"corplasdef",
-			"cortoast",
+			"corlab",
+			"coralab",
+			"corasp",
+			
+			"cortarg",
 			"corvipe",
-
-			"cordoom",
+			"corfort",
 			"corflak",
-			"corscreamer",
 			"cortron",
+			
 			"corfmd",
-
-			"corsilo",
+			"cordoom",
 			"corint",
+			"corscreamer",
+			"corsilo",
+			
 			"corbuzz",
-			"corap",
-			"coraap",
-
-			"corplat",
 		},
 		customparams = {
 			techlevel = 2,

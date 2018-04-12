@@ -35,6 +35,7 @@ return {
 		turnrate = 600,
 		blocking = false,
 		customparams = {
+			tooltipWeapon = "Rapid Rockets",
 			techlevel = 2,
 			wingsurface = 0.65,
 		},

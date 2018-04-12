@@ -6,7 +6,7 @@
 piece  base, body, rnanopoint, lnanopoint, rpinza, lpinza, rfwheel, rrwheel,
        lfwheel, lrwheel, nanopoint;
 
-static-var  unitviewer, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
+static-var  unitviewer, bMoving, Static_Var_2, statechg_DesiredState, statechg_StateChanging;
 
 
 SmokeUnit(healthpercent, sleeptime, smoketype)
@@ -34,33 +34,30 @@ SmokeUnit(healthpercent, sleeptime, smoketype)
 		}
 		sleep sleeptime;
 	}
-	return (0);
 }
 
-HitByWeapon(anglex, anglez)
+HitByWeapon(Func_Var_1, Func_Var_2)
 {
-	turn base to z-axis anglez speed <105.00000>;
-	turn base to x-axis anglex speed <105.00000>;
+	turn base to z-axis Func_Var_2 speed <105.000000>;
+	turn base to x-axis Func_Var_1 speed <105.000000>;
 	wait-for-turn base around z-axis;
 	wait-for-turn base around x-axis;
-	turn base to z-axis <0.00000> speed <30.00000>;
-	turn base to x-axis <0.00000> speed <30.00000>;
-	return (0);
+	turn base to z-axis <0.000000> speed <30.000000>;
+	turn base to x-axis <0.000000> speed <30.000000>;
 }
 
 Go()
 {
 	if( TRUE )
 	{
-		turn rpinza to y-axis <-13.00000> speed <30.00000>;
-		turn lpinza to y-axis <13.00000> speed <30.00000>;
+		turn rpinza to y-axis <-20.000000> speed <30.000000>;
+		turn lpinza to y-axis <20.000000> speed <30.000000>;
 		wait-for-turn rpinza around y-axis;
 		wait-for-turn lpinza around y-axis;
 		sleep 50;
 	}
 	sleep 50;
 	set INBUILDSTANCE to 1;
-	return (0);
 }
 
 Stop()
@@ -68,21 +65,19 @@ Stop()
 	set INBUILDSTANCE to 0;
 	if( TRUE )
 	{
-		turn rpinza to y-axis <0.00000> speed <30.00000>;
-		turn lpinza to y-axis <0.00000> speed <30.00000>;
+		turn rpinza to y-axis <0.000000> speed <30.000000>;
+		turn lpinza to y-axis <0.000000> speed <30.000000>;
 		wait-for-turn rpinza around y-axis;
 		wait-for-turn lpinza around y-axis;
 		sleep 50;
 	}
 	sleep 50;
-	return (0);
 }
 
 InitState()
 {
 	statechg_DesiredState = TRUE;
 	statechg_StateChanging = FALSE;
-	return (0);
 }
 
 RequestState(requestedstate, currentstate)
@@ -109,83 +104,97 @@ RequestState(requestedstate, currentstate)
 		}
 	}
 	statechg_StateChanging = FALSE;
-	return (0);
+}
+
+StartMoving()
+{
+	spin rfwheel around x-axis speed <500.000000> accelerate <100.000000>;
+	spin rrwheel around x-axis speed <500.000000> accelerate <100.000000>;
+	spin lfwheel around x-axis speed <500.000000> accelerate <100.000000>;
+	spin lrwheel around x-axis speed <500.000000> accelerate <100.000000>;
+	bMoving = TRUE;
+}
+
+StopMoving()
+{
+	stop-spin rfwheel around x-axis decelerate <200.000000>;
+	stop-spin rrwheel around x-axis decelerate <200.000000>;
+	stop-spin lfwheel around x-axis decelerate <200.000000>;
+	stop-spin lrwheel around x-axis decelerate <200.000000>;
+	bMoving = FALSE;
+}
+
+MotionControl()
+{
+	while (TRUE)
+	{
+		if (bMoving)
+		{
+			turn rpinza to y-axis <-20.000000> speed <50.000000>;
+			turn lpinza to y-axis <20.000000> speed <50.000000>;
+			wait-for-turn rpinza around y-axis;
+			wait-for-turn lpinza around y-axis;
+			turn rpinza to y-axis <0.000000> speed <50.000000>;
+			turn lpinza to y-axis <0.000000> speed <50.000000>;
+			wait-for-turn rpinza around y-axis;
+			wait-for-turn lpinza around y-axis;
+		}
+		else
+		{
+			sleep 100;
+		}
+	}
 }
 
 Create()
 {
 	unitviewer = FALSE;
+	bMoving = FALSE;
 	Static_Var_2 = 0;
 	call-script InitState();
 	start-script SmokeUnit();
-	return (0);
-}
-
-StartMoving()
-{
-	spin rfwheel around x-axis speed <50.00549> accelerate <10.00000>;
-	spin rrwheel around x-axis speed <50.00549> accelerate <10.00000>;
-	spin lfwheel around x-axis speed <50.00549> accelerate <10.00000>;
-	spin lrwheel around x-axis speed <50.00549> accelerate <10.00000>;
-	return (0);
-}
-
-StopMoving()
-{
-	stop-spin rfwheel around x-axis decelerate <20.00000>;
-	stop-spin rrwheel around x-axis decelerate <20.00000>;
-	stop-spin lfwheel around x-axis decelerate <20.00000>;
-	stop-spin lrwheel around x-axis decelerate <20.00000>;
-	return (0);
+	start-script MotionControl();
 }
 
 QueryNanoPiece(piecenum)
 {
 	piecenum = nanopoint;
-	return (0);
 }
 
 Demo()
 {
 	unitviewer = TRUE;
-	return (0);
 }
 
 SweetSpot(piecenum)
 {
 	piecenum = base;
-	return (0);
 }
 
 Activate()
 {
 	start-script RequestState(0);
-	return (0);
 }
 
 Deactivate()
 {
 	start-script RequestState(1);
-	return (0);
 }
 
 StartBuilding(Func_Var_1)
 {
 	Static_Var_2 = Func_Var_1;
 	start-script RequestState(0);
-	return (0);
 }
 
 StopBuilding()
 {
 	start-script RequestState(1);
-	return (0);
 }
 
 TargetHeading(Func_Var_1)
 {
 	Static_Var_2 = 0 - Func_Var_1;
-	return (0);
 }
 
 Killed(severity, corpsetype)
@@ -193,50 +202,50 @@ Killed(severity, corpsetype)
 	if( severity <= 25 )
 	{
 		corpsetype = 1;
-		explode base type SHATTER | NOHEATCLOUD;
-		explode rrwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5 | NOHEATCLOUD;
-		explode lfwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5 | NOHEATCLOUD;
-		explode rfwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5 | NOHEATCLOUD;
-		explode lrwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5 | NOHEATCLOUD;
-		explode rnanopoint type SHATTER | SMOKE | BITMAP4 | NOHEATCLOUD;
-		explode lnanopoint type SHATTER | SMOKE | BITMAP4 | NOHEATCLOUD;
-		explode nanopoint type SHATTER | SMOKE | BITMAP5 | NOHEATCLOUD;
+		explode base type SHATTER | 128;
+		explode rrwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5 | 128;
+		explode lfwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5 | 128;
+		explode rfwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5 | 128;
+		explode lrwheel type SHATTER | SMOKE | EXPLODE_ON_HIT | BITMAP5 | 128;
+		explode rnanopoint type SHATTER | SMOKE | BITMAP4 | 128;
+		explode lnanopoint type SHATTER | SMOKE | BITMAP4 | 128;
+		explode nanopoint type SHATTER | SMOKE | BITMAP5 | 128;
 		return (corpsetype);
 	}
 	if( severity <= 50 )
 	{
 		corpsetype = 2;
-		explode base type SHATTER | NOHEATCLOUD;
-		explode rrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-		explode lfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-		explode rfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-		explode lrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-		explode rnanopoint type SHATTER | SMOKE | BITMAP4 | NOHEATCLOUD;
-		explode lnanopoint type SHATTER | SMOKE | BITMAP4 | NOHEATCLOUD;
-		explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5 | NOHEATCLOUD;
+		explode base type SHATTER | 128;
+		explode rrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+		explode lfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+		explode rfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+		explode lrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+		explode rnanopoint type SHATTER | SMOKE | BITMAP4 | 128;
+		explode lnanopoint type SHATTER | SMOKE | BITMAP4 | 128;
+		explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5 | 128;
 		return (corpsetype);
 	}
 	if( severity <= 99 )
 	{
 		corpsetype = 3;
-		explode base type SHATTER | NOHEATCLOUD;
-		explode rrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-		explode lfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-		explode rfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-		explode lrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-		explode rnanopoint type SHATTER | SMOKE | FIRE | BITMAP4 | NOHEATCLOUD;
-		explode lnanopoint type SHATTER | SMOKE | FIRE | BITMAP4 | NOHEATCLOUD;
-		explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5 | NOHEATCLOUD;
+		explode base type SHATTER | 128;
+		explode rrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+		explode lfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+		explode rfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+		explode lrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+		explode rnanopoint type SHATTER | SMOKE | FIRE | BITMAP4 | 128;
+		explode lnanopoint type SHATTER | SMOKE | FIRE | BITMAP4 | 128;
+		explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5 | 128;
 		return (corpsetype);
 	}
 	corpsetype = 3;
-	explode base type SHATTER | NOHEATCLOUD;
-	explode rrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-	explode lfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-	explode rfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-	explode lrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | NOHEATCLOUD;
-	explode rnanopoint type SHATTER | SMOKE | FIRE | BITMAP4 | NOHEATCLOUD;
-	explode lnanopoint type SHATTER | SMOKE | FIRE | BITMAP4 | NOHEATCLOUD;
-	explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5 | NOHEATCLOUD;
+	explode base type SHATTER | 128;
+	explode rrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+	explode lfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+	explode rfwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+	explode lrwheel type SHATTER | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP4 | 128;
+	explode rnanopoint type SHATTER | SMOKE | FIRE | BITMAP4 | 128;
+	explode lnanopoint type SHATTER | SMOKE | FIRE | BITMAP4 | 128;
+	explode nanopoint type SHATTER | SMOKE | FIRE | BITMAP5 | 128;
 	return (corpsetype);
 }

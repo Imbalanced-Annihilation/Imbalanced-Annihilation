@@ -12,7 +12,7 @@ return {
 		collisionvolumescales = "30 15 32",
 		collisionvolumetype = "Box",
 		corpse = "DEAD",
-		description = "Support Assault Tank (700 Sight Range)",
+		description = "Support Assault Tank",
 		energymake = 0.5,
 		energyuse = 0.5,
 		explodeas = "smallexplosiongeneric",
@@ -42,7 +42,9 @@ return {
 		turnrate = 350,
 		script = "BASICTANKSCRIPT.LUA",
 		customparams = {
-			description_long = "",  
+			tooltipWeapon = "Piercing Laser",
+			tooltipSight = true,
+			specialTooltip = "Most effective against swarm / large units",
 			--ANIMATION DATA
 				--PIECENAMES HERE
 					basename = "base",
@@ -139,7 +141,6 @@ return {
 			cor_prot = {
 				areaofeffect = 20,
 				avoidfeature = false,
-				--avoidfriendly = false,
 				burnblow = true,
 				collideenemy = true,
 				craterareaofeffect = 0,
@@ -166,10 +167,8 @@ return {
 				weapontype = "LaserCannon",
 				weaponvelocity = 1500,
 				damage = {
-					default = 37,
-					kbot = 54,
-					tank = 54,
-					hover = 54,
+					default = 54,
+					plants = 37,
 					vtol = 10,
 					subs = 10,
 				},

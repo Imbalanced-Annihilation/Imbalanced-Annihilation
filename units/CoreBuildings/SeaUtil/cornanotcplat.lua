@@ -45,7 +45,8 @@ return {
 		useBuildingGroundDecal = false,
 		workertime = 200,
 		customparams = {
-
+			notTransportedByOthers = true,
+			unloadedSeaOnly = true,
 		},
 		sfxtypes = { 
  			pieceExplosionGenerators = { 

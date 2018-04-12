@@ -5,7 +5,7 @@ return {
 		buildangle = 16384,
 		buildcostenergy = 8000,
 		buildcostmetal = 700,
-		buildpic = "CORTHOVR.DDS",
+		buildpic = "CORTHOVR.PNG",
 		buildtime = 19587,
 		canmove = true,
 		cantbetransported = true,
@@ -43,7 +43,6 @@ return {
 		turnrate = 370,
 		waterline = 4,
 		customparams = {
-			
 		},
 		featuredefs = {
 			dead = {
