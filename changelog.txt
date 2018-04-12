@@ -177,11 +177,6 @@ ARM Zipper:
 Changed model and reduced collision volume scales from "25 31 11" to "17 31 11"
 Replaced EMG with fancy red/blue laser (about the same DPS)
 
-ARM Spider:
-Increased model by 45% and footprints by 1x1
-Increased attack range from 280 to 370
-Reload time from 1.75 to 1.0
-
 CORE Gimp:
 Replaced torpedoes with sea laser (stats are same as ground laser)
 
