@@ -170,7 +170,6 @@ Changed build options:
 Metal Extractor replaced with Armed Metal Extractor
 Advanced Jamming Tower replaced with Jamming Tower
 Advanced Radar Tower replaced with Radar Tower
-Pyro replaced with Can
 Can build Decoy Commander
 
 ARM Zipper:
