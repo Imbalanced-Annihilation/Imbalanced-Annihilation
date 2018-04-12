@@ -367,14 +367,15 @@ ARM Piranha:
 Reload time from 2 to 1.75
 Reduced health from 895 to 535
 Velocity from 3.08 to 3.38, turn rate from 150 to 373
+Damage against subs from 400 to 425 (relevant against experienced subs)
 // Weaker than Shark 1v1 but probably better in larger combat (Sharks will waste burst on overkill)
 
 Replaced ARM Serpent with Fibber - Sonar-Invisible Scout Sub
 Can cloak (170 cost, 370 while moving, 170 reveal range)
 
 ARM Lurker:
-Increased cost (e: 3200->3400, m: 550->750, bt: 6600->8400)
-Increased max damage from 635 to 835
+Increased cost (e: 3200->3400, m: 550->700, bt: 6600->7100)
+Increased max damage from 635 to 753
 // Made it relevant unit at T2, built by Valiant.
 // Lurkers deal big damage and become stronger with Fibbers scouting.
 
